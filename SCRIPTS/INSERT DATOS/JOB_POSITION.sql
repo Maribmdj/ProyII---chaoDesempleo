@@ -1,0 +1,11 @@
+﻿call insert_job_position('RECEPCIONISTA',1);
+call insert_job_position('OPERARIO',1);
+call insert_job_position('CONTADOR JUNIOR',1);
+call insert_job_position('AGENTE DE VENTAS',1);
+call insert_job_position('ING. SISTEMAS',1);
+call insert_job_position('SUPERVISOR DE PRODUCTOS',1);
+call insert_job_position('ANALISTA',1);
+call insert_job_position('QA',1);
+call insert_job_position('GERENTE FINANCIERO',1);
+call insert_job_position('EJECUTIVO DE COBRO',1);
+call insert_job_position('OFICINISTA',1);
