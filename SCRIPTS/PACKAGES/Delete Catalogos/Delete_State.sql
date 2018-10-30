@@ -1,0 +1,8 @@
+/*STATE*/
+DELIMITER $$
+CREATE PROCEDURE DELETE_STATE(IN pidSTATE INT)
+BEGIN
+    delete from STATE where id_STATE = pidSTATE;
+end
+$$
+DELIMITER ;

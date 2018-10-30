@@ -1,0 +1,9 @@
+
+/*PERSON*/
+DELIMITER $$
+CREATE PROCEDURE DELETE_PERSON(IN pidPERSON INT)
+BEGIN
+    delete from person where ID_PERSON = pidPERSON;
+end
+$$
+DELIMITER ;

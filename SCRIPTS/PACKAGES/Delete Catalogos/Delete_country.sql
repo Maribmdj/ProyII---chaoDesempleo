@@ -1,0 +1,8 @@
+/*COUNTRY*/
+DELIMITER $$
+CREATE PROCEDURE DELETE_COUNTRY(IN pidPais INT)
+BEGIN
+    delete from COUNTRY where id_COUNTRY = pidPais;
+end
+$$
+DELIMITER ;
