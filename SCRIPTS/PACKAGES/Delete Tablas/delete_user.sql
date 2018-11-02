@@ -1,0 +1,8 @@
+/*USER*/
+DELIMITER $$
+CREATE PROCEDURE DELETE_USER(IN pidUSER INT)
+BEGIN
+    delete from USER where ID_USER = pidUSER;
+end
+$$
+DELIMITER ;
