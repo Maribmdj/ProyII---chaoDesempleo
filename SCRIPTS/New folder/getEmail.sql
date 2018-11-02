@@ -1,0 +1,9 @@
+Delimiter $$
+
+CREATE PROCEDURE `getEmail`()
+MODIFIES SQL DATA
+BEGIN
+  SELECT ID_EMAIL, EMAIL, ID_PERSON FROM email;
+END$$
+
+delimiter ;
