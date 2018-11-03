@@ -1,0 +1,9 @@
+Delimiter $$
+
+CREATE PROCEDURE `getAcademic_Degree`()
+MODIFIES SQL DATA
+BEGIN
+  SELECT ID_ACADEMIC_DEGREE, NAME, ACADEMIC_DEGREE, STATE FROM academic_degree;
+END$$
+
+delimiter ;
