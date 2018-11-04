@@ -17,7 +17,7 @@ public class ChaoDesempleo {
      */
     public static void main(String[] args) {
         
-        dbManager = databaseManager.getManager("jdbc:mysql://localhost:3306/chaodesempleo?verifyServerCertificate=false&useSSL=true", "root", "oldold.2");
+        dbManager = databaseManager.getManager("jdbc:mysql://localhost:3306/chaodesempleo?verifyServerCertificate=false&useSSL=true", "root", "Mysql");
         if(dbManager.getConexion()!= null){
             System.out.println("Database connected");
             java.awt.EventQueue.invokeLater(() -> {
