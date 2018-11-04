@@ -19,9 +19,7 @@ call insert_industry('TECNOLOGÍA',1);
 call insert_industry('TRANSPORTE',1);
 call insert_industry('TURISMO',1);
 call insert_industry('TELECOMUNICACIONES',1);
-call insert_industry('TRANSPORTE',1);
 call insert_industry('INDUSTRIA QUÍMICA',1);
-call insert_industry('MERCADEO',1);
 call insert_industry('ADMINISTRACIÓN',1);
 
 SELECT * FROM INDUSTRY

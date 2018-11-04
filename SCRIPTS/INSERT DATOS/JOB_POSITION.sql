@@ -1,4 +1,3 @@
-﻿call insert_job_position('RECEPCIONISTA',1);
 call insert_job_position('OPERARIO',1);
 call insert_job_position('CONTADOR JUNIOR',1);
 call insert_job_position('AGENTE DE VENTAS',1);

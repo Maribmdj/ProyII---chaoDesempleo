@@ -1,5 +1,4 @@
-call insert_type_person('ADMIN');
-
-call insert_type_person('EMPRESA');
-call insert_type_person('PERSONA');
+call insert_typeperson('ADMIN',1);
+call insert_typeperson('EMPRESA',1);
+call insert_typeperson('PERSONA',1);
 

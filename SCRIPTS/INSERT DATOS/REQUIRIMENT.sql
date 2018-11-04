@@ -1,0 +1,11 @@
+call insert_requiriment('1 AÑOS DE EXPERIENCIA',1);
+call insert_requiriment('2 AÑOS DE EXPERIENCIA',1);
+call insert_requiriment('5 AÑOS DE EXPERIENCIA',1);
+call insert_requiriment('INGLES BÁSSICO',1);
+call insert_requiriment('INGLES INTERMEDIO',1);
+call insert_requiriment('INGLES AVANZADO',1);
+call insert_requiriment('LLICENCIA B1',1);
+call insert_requiriment('LLICENCIA B2',1);
+call insert_requiriment('PASAPORTE',1);
+call insert_requiriment('CARRO PROPIO',1);
+call insert_requiriment('MOTO PROPIA',1);
