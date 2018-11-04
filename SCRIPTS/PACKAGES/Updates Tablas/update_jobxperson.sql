@@ -3,9 +3,9 @@ CREATE PROCEDURE update_jobxperson(IN pid_jobxperson INT, IN pid_person INT, IN 
 	BEGIN
 		UPDATE jobxperson
         set 
-        pid_person	= id_person, 
-        pid_job		=id_job,
-        pcvpdf 		= cvpdf
+        id_person = ifnull ( pid_person,id_person),
+        id_job = ifnull (pid_job,id_job),
+        cvpdf = isnull(pcvpdf, cvpdf)
         where id_jobxperson=pid_jobxperson;
     END$$
     

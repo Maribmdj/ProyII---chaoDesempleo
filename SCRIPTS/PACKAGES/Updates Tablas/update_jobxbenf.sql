@@ -3,8 +3,8 @@ CREATE PROCEDURE update_jobxbenf(IN pid_jobxbenf INT, IN pid_benf INT, IN pid_jo
 	BEGIN
 		UPDATE jobxbenf
         set 
-        pid_benf	= id_benf, 
-        pid_job		= id_job
+        id_benefif = ifnull ( pid_benefit,id_benefit),
+        id_job = ifnull ( pid_job,id_job)
         where id_jobxbenf=pid_jobxbenf;
     END$$
     
