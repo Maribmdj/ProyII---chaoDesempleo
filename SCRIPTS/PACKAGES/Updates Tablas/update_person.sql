@@ -3,17 +3,17 @@ CREATE PROCEDURE update_person(IN pnumber_identif INT, IN pname VARCHAR(70), IN 
 	BEGIN
 		UPDATE person
         set 
-        pnumber_identif=number_identif,
-        pname =name,
-        plastname1 =lastname1,
-        plastname2 =lastname2,
-        pbirthdate =birthdate,
-        pphoto =photo,
-        pid_typeperson = id_typeperson, 
-        pid_nationality = id_nationality,
-        pid_industry = id_industry,
-        pid_distrito = id_distrito
-        where id_person=pid_person;
+        number_identif = ifnull ( pnumber_identif,number_identif),
+        name = ifnull ( pname,name),
+        lastname1 = ifnull ( plastname1,lastname1),
+        lastname2 = ifnull ( plastname2,lastname2),
+        birthdate = ifnull ( pbirthdate,birthdate),
+		photo = ifnull ( pphoto,photo),
+        type_person = ifnull ( ptype_person,type_person),
+        nationality = ifnull(pnationality, nationality),
+        industry = ifnull(pindustry, industry),
+        distrito = ifnull ( pdistrito,distrito)
+        where id_pnumberidentf=pid_pnumberidentif;
     END$$
     
 DELIMITER ;

@@ -3,15 +3,16 @@ CREATE PROCEDURE update_JOB(IN pID_JOB INT, IN pBIRTHDATE date, IN pDESCRIPTION 
 	BEGIN
 		UPDATE job 
         SET
-		  BIRTHDATE 	= PBIRTHDATE,
-		  DESCRIPTION 	= PDESCRIPTION, 
-		  PUBDATE 		= PPUBDATE,
-		  DUEDATE		= PDUEDATES,
-		  VACANCIES 	= PVACANTES,
-		  pid_state 	= ID_STATE,
-		  ID_CAREER 	= pId_CAREER,
-		  ID_ADEGREE 	= PID_ADEGREE,
-		  ID_JOBPOS 	= PID_JOBPOS
+		
+		  BIRTHDATE 	= isnull(PBIRTHDATE, birthdate),
+		  DESCRIPTION 	= isnull(PDESCRIPTION, description),
+		  PUBDATE 		= isnull(PPUBDATE, pubdate),
+		  DUEDATE		= isnull(PDUEDATES, duedate),
+		  VACANCIES 	= isnull(PVACANTES, vacantes),
+		  pid_state 	= isnull(pID_STATE, id_state),
+		  ID_CAREER 	= isnull(pId_CAREER, id_career),
+		  ID_ADEGREE 	= isnull(PID_ADEGREE, id_degree),
+		  ID_JOBPOS 	= isnull(PID_JOBPOS, id_jobpos)
 		  Where pid_job = id_job;
 	END$$
     
