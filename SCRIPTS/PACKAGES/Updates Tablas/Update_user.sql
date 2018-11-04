@@ -1,5 +1,5 @@
 DELIMITER $$
-CREATE PROCEDURE update_user(IN puser INT, IN ppassword VARCHAR(100), IN pid_person INT)
+CREATE PROCEDURE update_user(IN puser VARCHAR(80), IN ppassword VARCHAR(100), IN pid_person INT)
 	BEGIN
 		UPDATE user
         set user=puser, 
@@ -7,4 +7,4 @@ CREATE PROCEDURE update_user(IN puser INT, IN ppassword VARCHAR(100), IN pid_per
         where id_user=pid_user;
     END$$
     
-DELIMITER ;
+DELIMITER;

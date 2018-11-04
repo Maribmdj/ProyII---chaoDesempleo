@@ -1,5 +1,5 @@
 DELIMITER $$
-CREATE PROCEDURE update_number(IN pidpnumber INT, IN ppnumberl VARCHAR(100), IN pid_person INT)
+CREATE PROCEDURE update_number(IN pidpnumber INT, IN ppnumber VARCHAR(100), IN pid_person INT)
 	BEGIN
 		UPDATE pnumber
         set ppnumber = pnumber,
