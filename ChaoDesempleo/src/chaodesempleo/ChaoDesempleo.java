@@ -10,12 +10,21 @@ package chaodesempleo;
  * @author Mariela
  */
 public class ChaoDesempleo {
-
+    static protected int currentUser;
+    static protected databaseManager dbManager;
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        
+        dbManager = databaseManager.getManager("jdbc:mysql://localhost:3306/chaodesempleo?verifyServerCertificate=false&useSSL=true", "root", "Mysql");
+        if(dbManager.getConexion()!= null){
+            System.out.println("Database connected");
+            java.awt.EventQueue.invokeLater(() -> {
+                new Login().setVisible(true);
+            });
+        }else{
+            System.out.println("Failed to connect");
+        }
     }
-    
 }

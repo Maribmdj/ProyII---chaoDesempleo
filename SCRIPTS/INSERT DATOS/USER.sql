@@ -21,3 +21,6 @@ CALL insert_user('cbar','cbar',20);
 CALL insert_user('csandoval','csandoval',21);
 CALL insert_user('vmora','vmora',22);
 CALL insert_user('dvil','dvil',23);
+
+select * from user;
+

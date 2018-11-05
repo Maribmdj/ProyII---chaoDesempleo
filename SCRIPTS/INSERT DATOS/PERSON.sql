@@ -1,8 +1,8 @@
 #YYYY-MM-DD
 #3 admin
 call insert_person(115290412, 'MARIELA','BARRANTES','MATA','1993/02/21','FOTO', 1, 16, 22, 45);
-call insert_person(115290412, 'NAKISHA','DIXON','','1993/02/21','FOTO', 1, 16, 29, 41);
-call insert_person(115290412, 'ÁLVARO','MATARRITA','','1993/02/21','FOTO', 1, 16, 29, 38);
+call insert_person(115290412, 'NAKISHA','DIXON','','1993/02/21','FOTO', 1, 16, 22, 41);
+call insert_person(115290412, 'ÁLVARO','MATARRITA','','1993/02/21','FOTO', 1, 16, 22, 38);
 
 #10 personas
 call insert_person(116322929, 'JAZMIN','OBANDO','CAMPOS','1996/04/11','FOTO', 3, 11, 2, 11);

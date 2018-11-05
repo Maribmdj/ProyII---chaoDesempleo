@@ -21,3 +21,5 @@ call insert_pnumber('85193520',20);
 call insert_pnumber('85203521',21);
 call insert_pnumber('85213522',22);
 call insert_pnumber('85223523',23);
+
+select * from pnumber;

@@ -3,10 +3,10 @@ CREATE PROCEDURE update_buser(IN pid_buser INT, IN PDATE DATE, IN pPWPREVIOUS VA
 	BEGIN
 		UPDATE buser
         SET
-		  DATE = pDATE,
-		  PWPREVIOUS = pPWPREVIOUS, 
-		  PWCURRENT = pPWCURRENT,  
-		  ID_USER = pid_USER
+		  DATE = isnull(pDATE, date),
+		  PWPREVIOUS = isnull(pPWPREVIOUS, pwprevious),
+		  PWCURRENT = isnull(pPWCURRENT, pwcurrent),
+		  ID_USER = isnull(pid_USER, id_user)
         WHERE ID_BUSER = pid_buser;
     END$$
     

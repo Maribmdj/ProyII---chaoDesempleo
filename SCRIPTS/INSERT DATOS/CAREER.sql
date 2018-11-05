@@ -1,4 +1,5 @@
-﻿call insert_career('RECEPCIONISTA',1);call insert_career('ING.EN SISTEMAS',1);
+call insert_career('RECEPCIONISTA',1);
+call insert_career('ING.EN SISTEMAS',1);
 call insert_career('CONTADOR(A)',1);
 call insert_career('ING.INDUSTRIAL',1);
 call insert_career('ABOGADO',1);
@@ -17,3 +18,4 @@ call insert_career('PSICÓLOGA(O)',1);
 call insert_career('ODONTÓLOGA(O)',1);
 call insert_career('TRAB. SOCIAL',1);
 
+SELECT * FROM career;
