@@ -5,6 +5,8 @@
  */
 package chaodesempleo;
 
+import java.sql.Connection;
+
 /**
  *
  * @author Mariela
@@ -305,6 +307,7 @@ public class Registro extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         this.dispose();
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
