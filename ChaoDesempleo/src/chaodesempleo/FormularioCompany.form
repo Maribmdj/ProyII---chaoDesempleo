@@ -83,7 +83,7 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Component id="p33" max="32767" attributes="0"/>
-          <Component id="paneltabla" alignment="0" max="32767" attributes="0"/>
+          <Component id="j1" alignment="0" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
@@ -91,7 +91,7 @@
           <Group type="102" alignment="0" attributes="0">
               <Component id="p33" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="paneltabla" max="32767" attributes="0"/>
+              <Component id="j1" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -108,32 +108,31 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
-                  <EmptySpace min="-2" pref="93" max="-2" attributes="0"/>
-                  <Component id="fechainil2" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="4" pref="4" max="-2" attributes="0"/>
-                  <Component id="fechainif2" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="25" pref="25" max="-2" attributes="0"/>
-                  <Component id="fechafinl2" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
-                  <Component id="fechafinf2" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="32767" attributes="0"/>
-              </Group>
-              <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="namel" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="nombref" min="-2" pref="83" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="puestol" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="fechainil2" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="fechainif2" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                          <Component id="fechafinl2" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="fechafinf2" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="namel" min="-2" pref="47" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="nombref" min="-2" pref="83" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="puestol" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="puestof" min="-2" pref="86" max="-2" attributes="0"/>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="puestof" min="-2" pref="86" max="-2" attributes="0"/>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="rangol" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="rangof" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="32767" attributes="0"/>
-                  <Component id="jButton1" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -141,21 +140,25 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="namel" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="puestol" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="rangol" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="nombref" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="puestof" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="rangof" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="fechainil2" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="fechainif2" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="fechafinl2" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="fechafinf2" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="1" attributes="0">
+                      <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="namel" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="puestol" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="nombref" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="puestof" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="103" alignment="0" groupAlignment="1" attributes="0">
+                                  <Component id="fechainif2" min="-2" max="-2" attributes="0"/>
+                                  <Component id="fechainil2" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Component id="fechafinl2" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <Component id="fechafinf2" alignment="1" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
                   </Group>
                   <EmptySpace pref="15" max="32767" attributes="0"/>
               </Group>
@@ -173,14 +176,9 @@
             <Property name="text" type="java.lang.String" value="Puesto"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="rangol">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Rango de Edad"/>
-          </Properties>
-        </Component>
         <Component class="javax.swing.JLabel" name="fechainil2">
           <Properties>
-            <Property name="text" type="java.lang.String" value="                  de: "/>
+            <Property name="text" type="java.lang.String" value="Solicitud de: "/>
           </Properties>
         </Component>
         <Component class="com.toedter.calendar.JDateChooser" name="fechainif2">
@@ -234,21 +232,6 @@
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JComboBox" name="rangof">
-          <Properties>
-            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="4">
-                <StringItem index="0" value="Item 1"/>
-                <StringItem index="1" value="Item 2"/>
-                <StringItem index="2" value="Item 3"/>
-                <StringItem index="3" value="Item 4"/>
-              </StringArray>
-            </Property>
-          </Properties>
-          <AuxValues>
-            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-          </AuxValues>
-        </Component>
         <Component class="javax.swing.JButton" name="jButton1">
           <Properties>
             <Property name="text" type="java.lang.String" value="Buscar"/>
@@ -259,7 +242,7 @@
         </Component>
       </SubComponents>
     </Container>
-    <Container class="javax.swing.JPanel" name="paneltabla">
+    <Container class="javax.swing.JPanel" name="j1">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ff" green="ff" red="ff" type="rgb"/>

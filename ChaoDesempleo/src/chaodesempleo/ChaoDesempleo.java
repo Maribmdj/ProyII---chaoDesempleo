@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package chaodesempleo;
+import Utilidades.*;
 
 /**
  *
@@ -15,8 +16,13 @@ public class ChaoDesempleo {
     /**
      * @param args the command line arguments
      */
+<<<<<<< HEAD
     public static void main(String[] args) {       
         //dbManager = databaseManager.getManager("jdbc:mysql://localhost:3306/chaodesempleo?verifyServerCertificate=false&useSSL=true", "root", "Naki2000+");
+=======
+    public static void main(String[] args) {
+        dbManager = databaseManager.getManager("jdbc:mysql://localhost:3306/chaodesempleo?verifyServerCertificate=false&useSSL=true", "root", "Naki2000+");
+>>>>>>> 183b2723e8ba171aef6fb92bedc641b41ce27897
         dbManager = databaseManager.getManager("jdbc:mysql://localhost:3306/chaodesempleo?verifyServerCertificate=false&useSSL=true", "root", "Mysql");
 
         if(dbManager.getConexion()!= null){

@@ -16,21 +16,13 @@ public class Tabla{
     static int cont =0;
     
     
-    public void ver_eventos(JTable tabla){
-        
+    public void puestoxEmpresa(JTable tabla){
         tabla.setDefaultRenderer(Object.class, new Render());
-        
-        JButton btn1 = new JButton("Modificar");
-        btn1.setName("m");
-        JButton btn2 = new JButton("Eliminar");
-        btn2.setName("e");
-        JButton btn3 = new JButton("Ver");
-        btn2.setName("a");
         
         d = new DefaultTableModel
         (
                 new Object[][]{},
-                new Object[]{"Nombre","Lugar","Fecha Inicio","Fecha Fin","Eliminar", "Modificar","Ver Actividades"}
+                new Object[]{"Empresa","Puestos Disponibles"}
         )
         {
             public boolean isCellEditable(int row, int column){
@@ -44,22 +36,35 @@ public class Tabla{
  
     }
     
-    //Actividades por evento
-    public void ver_actividades(JTable tabla){
+    //Puesto x Empresa
+    public void solicitantes(JTable tabla){
         
-        tabla.setDefaultRenderer(Object.class, new Render());
-        
-        JButton btn1 = new JButton("Modificar");
-        btn1.setName("m");
-        JButton btn2 = new JButton("Eliminar");
-        btn2.setName("e");
-        JButton btn3 = new JButton("Ver");
-        btn2.setName("a");
-        
+        tabla.setDefaultRenderer(Object.class, new Render()); 
         d = new DefaultTableModel
         (
                 new Object[][]{},
-                new Object[]{"Nombre","Lugar","Fecha","Fecha Inicio","Fecha Fin","Eliminar", "Modificar","Ver Actividades"}
+                new Object[]{"Nombre Empresa","Puesto"}
+        )
+        {
+            public boolean isCellEditable(int row, int column){
+                return false;
+            }
+        };
+        
+        tabla.setModel(d);
+        
+        tabla.setPreferredScrollableViewportSize(tabla.getPreferredSize());
+ 
+    }
+    
+        //Usuarios sin cambio
+    public void usuariosSinCambio(JTable tabla){
+        
+        tabla.setDefaultRenderer(Object.class, new Render()); 
+        d = new DefaultTableModel
+        (
+                new Object[][]{},
+                new Object[]{"Usuaris"}
         )
         {
             public boolean isCellEditable(int row, int column){

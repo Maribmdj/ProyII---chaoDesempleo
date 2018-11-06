@@ -209,7 +209,27 @@ public class Login extends javax.swing.JFrame {
             int s = ChaoDesempleo.dbManager.validateUser(txtUser.getText(), txtClave.getPassword());
             if(s != -1){
                 ChaoDesempleo.currentUser = s;
-                JOptionPane.showMessageDialog(rootPane, "Usuario encontrado, id_user = " + s);
+                this.setVisible(false);
+                switch (s) {
+                    case 1:
+                        {
+                            FormularioAdmin fmla = new FormularioAdmin();
+                            fmla.setVisible(true);
+                            break;
+                        }
+                    case 2:
+                        {
+                            FormularioCompany fmla = new FormularioCompany();
+                            fmla.setVisible(true);
+                            break;
+                        }
+                    default:
+                        {
+                            FormularioUser fmla = new FormularioUser();
+                            fmla.setVisible(true);
+                            break;
+                        }
+                }
             }else{
                 JOptionPane.showMessageDialog(rootPane, "Usuario no encontrado");
             }

@@ -4,8 +4,22 @@
  * and open the template in the editor.
  */
 package chaodesempleo;
-import org.xml.sax.Attributes;
 
+import Utilidades.*;
+import javax.swing.table.DefaultTableModel;
+import java.awt.BorderLayout;
+import java.awt.Dimension;
+import java.sql.CallableStatement;
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Vector;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.ScrollPaneConstants;
 /**
  *
  * @author Mariela
@@ -15,11 +29,45 @@ public class FormularioAdmin extends javax.swing.JFrame {
     /**
      * Creates new form FormularioAdmin
      */
+    Tabla t = new Tabla();
+    
     public FormularioAdmin() {
         initComponents();
         p11.setVisible(false);
-        p22.setVisible(false);
+        InvisiblesComp();
        
+    }
+     public void InvisiblesComp()
+    {
+        //LABELS
+        userl.setVisible(false);
+        nombrel.setVisible(false);
+        namel.setVisible(false);
+        fechainil.setVisible(false);
+        fechafinl.setVisible(false);
+        edadinil.setVisible(false);
+        edadfinl.setVisible(false);
+        idl.setVisible(false);
+        lastnamel.setVisible(false);
+        lastname2l.setVisible(false);
+        gradol.setVisible(false);
+        
+        //BOTONES
+        buscar.setVisible(false);
+        buscar2.setVisible(false);
+        
+        //PANELES Y COMBOBOX
+        userf.setVisible(false);
+        nombref.setVisible(false);
+        namef.setVisible(false);
+        fechainif.setVisible(false);
+        fechafinf.setVisible(false);
+        edadinif.setVisible(false);
+        edadfinf.setVisible(false);
+        idf.setVisible(false);
+        lastnamef.setVisible(false);
+        lastname2f.setVisible(false);
+        gradof.setVisible(false);  
     }
 
     /**
@@ -31,31 +79,36 @@ public class FormularioAdmin extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
         p11 = new javax.swing.JPanel();
-        p22 = new javax.swing.JPanel();
+        nombrel = new javax.swing.JLabel();
+        fechainif = new com.toedter.calendar.JDateChooser();
+        fechafinf = new com.toedter.calendar.JDateChooser();
+        fechainil = new javax.swing.JLabel();
+        fechafinl = new javax.swing.JLabel();
+        nombref = new javax.swing.JComboBox<>();
+        edadfinf = new com.toedter.calendar.JDateChooser();
+        edadinil = new javax.swing.JLabel();
+        edadfinl = new javax.swing.JLabel();
+        edadinif = new com.toedter.calendar.JDateChooser();
+        gradol = new javax.swing.JLabel();
+        gradof = new javax.swing.JComboBox<>();
         namel = new javax.swing.JLabel();
         namef = new javax.swing.JTextField();
         lastnamel = new javax.swing.JLabel();
-        lastname1f = new javax.swing.JTextField();
+        lastnamef = new javax.swing.JTextField();
         lastname2l = new javax.swing.JLabel();
         lastname2f = new javax.swing.JTextField();
         idl = new javax.swing.JLabel();
         idf = new javax.swing.JTextField();
-        fechainil2 = new javax.swing.JLabel();
-        fechainif2 = new com.toedter.calendar.JDateChooser();
-        fechafinl2 = new javax.swing.JLabel();
-        fechafinf2 = new com.toedter.calendar.JDateChooser();
-        nombrel1 = new javax.swing.JLabel();
-        edadf1 = new javax.swing.JComboBox<>();
-        edadl1 = new javax.swing.JLabel();
-        fechainif1 = new com.toedter.calendar.JDateChooser();
-        fechafinf1 = new com.toedter.calendar.JDateChooser();
-        fechainil1 = new javax.swing.JLabel();
-        fechafinl1 = new javax.swing.JLabel();
-        gradof1 = new javax.swing.JComboBox<>();
-        gradol1 = new javax.swing.JLabel();
-        nombref = new javax.swing.JComboBox<>();
-        paneltabla = new javax.swing.JPanel();
+        buscar = new javax.swing.JButton();
+        userl = new javax.swing.JLabel();
+        userf = new javax.swing.JTextField();
+        buscar2 = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tabla = new javax.swing.JTable();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -73,12 +126,52 @@ public class FormularioAdmin extends javax.swing.JFrame {
         jMenuItem11 = new javax.swing.JMenuItem();
         jMenuItem12 = new javax.swing.JMenuItem();
 
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(650, 600));
 
         p11.setBackground(new java.awt.Color(255, 255, 255));
-        p11.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        p11.setPreferredSize(new java.awt.Dimension(650, 70));
 
-        p22.setBackground(new java.awt.Color(255, 255, 255));
+        nombrel.setText("Nombre Empresa");
+
+        fechainif.setDateFormatString("DD/MM/YYYY");
+        fechainif.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+
+        fechafinf.setDateFormatString("DD/MM/YYYY");
+        fechafinf.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+
+        fechainil.setText("De: ");
+
+        fechafinl.setText("hasta:");
+
+        nombref.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        edadfinf.setDateFormatString("DD/MM/YYYY");
+        edadfinf.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+
+        edadinil.setText("Edad de");
+
+        edadfinl.setText("hasta:");
+
+        edadinif.setDateFormatString("DD/MM/YYYY");
+        edadinif.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+
+        gradol.setText("G. Academico");
+
+        gradof.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         namel.setText("Nombre");
 
@@ -88,121 +181,158 @@ public class FormularioAdmin extends javax.swing.JFrame {
 
         idl.setText("Cedula");
 
-        fechainil2.setText("                  de: ");
+        buscar.setText("Buscar");
+        buscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buscarActionPerformed(evt);
+            }
+        });
 
-        fechainif2.setDateFormatString("DD/MM/YYYY");
-        fechainif2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        userl.setText("Usuario");
 
-        fechafinl2.setText("hasta:");
+        userf.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                userfActionPerformed(evt);
+            }
+        });
 
-        fechafinf2.setDateFormatString("DD/MM/YYYY");
-        fechafinf2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        buscar2.setText("Buscar");
 
-        javax.swing.GroupLayout p22Layout = new javax.swing.GroupLayout(p22);
-        p22.setLayout(p22Layout);
-        p22Layout.setHorizontalGroup(
-            p22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(p22Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(p22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(p22Layout.createSequentialGroup()
-                        .addComponent(namel)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(namef, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(p22Layout.createSequentialGroup()
-                        .addComponent(idl)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(idf)))
-                .addGap(18, 18, 18)
-                .addGroup(p22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(p22Layout.createSequentialGroup()
-                        .addComponent(lastnamel)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lastname1f, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(lastname2l)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lastname2f))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, p22Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(fechainil2)
-                        .addGap(4, 4, 4)
-                        .addComponent(fechainif2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(25, 25, 25)
-                        .addComponent(fechafinl2)
+        javax.swing.GroupLayout p11Layout = new javax.swing.GroupLayout(p11);
+        p11.setLayout(p11Layout);
+        p11Layout.setHorizontalGroup(
+            p11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(p11Layout.createSequentialGroup()
+                .addGap(10, 10, 10)
+                .addGroup(p11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(p11Layout.createSequentialGroup()
+                        .addComponent(fechainil, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(10, 10, 10)
-                        .addComponent(fechafinf2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap())
+                        .addComponent(fechainif, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(27, 27, 27)
+                        .addComponent(namel)
+                        .addGap(13, 13, 13)
+                        .addComponent(namef, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(20, 20, 20)
+                        .addComponent(lastnamel)
+                        .addGap(17, 17, 17)
+                        .addComponent(lastnamef, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(p11Layout.createSequentialGroup()
+                        .addComponent(fechafinl)
+                        .addGap(19, 19, 19)
+                        .addComponent(fechafinf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(37, 37, 37)
+                        .addComponent(idl)
+                        .addGap(7, 7, 7)
+                        .addComponent(idf, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(20, 20, 20)
+                        .addComponent(lastname2l)
+                        .addGap(8, 8, 8)
+                        .addComponent(lastname2f, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(p11Layout.createSequentialGroup()
+                        .addGroup(p11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(p11Layout.createSequentialGroup()
+                                .addComponent(nombrel)
+                                .addGap(9, 9, 9)
+                                .addComponent(nombref, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(p11Layout.createSequentialGroup()
+                                .addComponent(gradol)
+                                .addGap(11, 11, 11)
+                                .addComponent(gradof, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(24, 24, 24)
+                        .addGroup(p11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(p11Layout.createSequentialGroup()
+                                .addComponent(buscar)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(buscar2))
+                            .addGroup(p11Layout.createSequentialGroup()
+                                .addComponent(edadinil, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(10, 10, 10)
+                                .addComponent(edadinif, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(p11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(p11Layout.createSequentialGroup()
+                                .addGap(50, 50, 50)
+                                .addComponent(edadfinl)
+                                .addGap(9, 9, 9)
+                                .addComponent(edadfinf, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, p11Layout.createSequentialGroup()
+                                .addGap(40, 40, 40)
+                                .addComponent(userl)
+                                .addGap(14, 14, 14)
+                                .addComponent(userf, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(49, Short.MAX_VALUE))
         );
-        p22Layout.setVerticalGroup(
-            p22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(p22Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(p22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+        p11Layout.setVerticalGroup(
+            p11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(p11Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addGroup(p11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(fechainil)
+                    .addComponent(fechainif, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(namel)
                     .addComponent(namef, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lastnamel)
-                    .addComponent(lastname1f, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(p11Layout.createSequentialGroup()
+                        .addGap(4, 4, 4)
+                        .addComponent(lastnamel, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lastnamef, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(16, 16, 16)
+                .addGroup(p11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(fechafinl)
+                    .addComponent(fechafinf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(idl)
+                    .addComponent(idf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lastname2l)
                     .addComponent(lastname2f, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(p22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(p22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(idl)
-                        .addComponent(idf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(p22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(fechainil2)
-                        .addComponent(fechainif2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(fechafinl2)
-                        .addComponent(fechafinf2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(15, Short.MAX_VALUE))
+                .addGap(10, 10, 10)
+                .addGroup(p11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(nombrel)
+                    .addComponent(nombref, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(p11Layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addGroup(p11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(edadinil)
+                            .addComponent(edadinif, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(edadfinl)
+                            .addComponent(edadfinf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGroup(p11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(p11Layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addGroup(p11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(gradol)
+                            .addComponent(gradof, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(userl, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(userf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(p11Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addGroup(p11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(buscar)
+                            .addComponent(buscar2)))))
         );
 
-        p11.add(p22, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 597, -1));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
-        nombrel1.setText("Nombre");
-        p11.add(nombrel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 14, -1, -1));
+        tabla.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
 
-        edadf1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-18", "18-30", "31-45", "46-55", "56-65", "66-75", "+75" }));
-        p11.add(edadf1, new org.netbeans.lib.awtextra.AbsoluteConstraints(243, 11, -1, -1));
+            },
+            new String [] {
 
-        edadl1.setText("Edad");
-        p11.add(edadl1, new org.netbeans.lib.awtextra.AbsoluteConstraints(202, 14, -1, -1));
+            }
+        ));
+        jScrollPane2.setViewportView(tabla);
 
-        fechainif1.setDateFormatString("DD/MM/YYYY");
-        fechainif1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        p11.add(fechainif1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 50, -1, -1));
-
-        fechafinf1.setDateFormatString("DD/MM/YYYY");
-        fechafinf1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        p11.add(fechafinf1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 50, -1, -1));
-
-        fechainil1.setText("Publicacion de: ");
-        p11.add(fechainil1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, -1, -1));
-
-        fechafinl1.setText("hasta:");
-        p11.add(fechafinl1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 50, -1, -1));
-
-        gradof1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        p11.add(gradof1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 11, -1, -1));
-
-        gradol1.setText("GradoAcademico");
-        p11.add(gradol1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 14, -1, -1));
-
-        nombref.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        p11.add(nombref, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, 90, -1));
-
-        paneltabla.setBackground(new java.awt.Color(255, 255, 255));
-
-        javax.swing.GroupLayout paneltablaLayout = new javax.swing.GroupLayout(paneltabla);
-        paneltabla.setLayout(paneltablaLayout);
-        paneltablaLayout.setHorizontalGroup(
-            paneltablaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane2)
+                .addContainerGap())
         );
-        paneltablaLayout.setVerticalGroup(
-            paneltablaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 260, Short.MAX_VALUE)
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 212, Short.MAX_VALUE)
         );
 
         jMenu1.setText("Consultas");
@@ -212,7 +342,7 @@ public class FormularioAdmin extends javax.swing.JFrame {
             }
         });
 
-        jMenuItem1.setText("Puestos por empresa");
+        jMenuItem1.setText("Usuarios sin modificar Clave");
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem1ActionPerformed(evt);
@@ -228,7 +358,12 @@ public class FormularioAdmin extends javax.swing.JFrame {
         });
         jMenu1.add(jMenuItem2);
 
-        jMenuItem3.setText("Usuarios sin modificar clave");
+        jMenuItem3.setText("Puesto por empresa");
+        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem3ActionPerformed(evt);
+            }
+        });
         jMenu1.add(jMenuItem3);
 
         jMenuBar1.add(jMenu1);
@@ -279,22 +414,37 @@ public class FormularioAdmin extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(p11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(paneltabla, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(p11, javax.swing.GroupLayout.DEFAULT_SIZE, 629, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(p11, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(p11, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(paneltabla, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        
+        p11.setVisible(true);
+        namel.setVisible(true);
+        namef.setVisible(true);
+        lastnamel.setVisible(true);
+        lastname2l.setVisible(true);
+        lastnamef.setVisible(true);
+        lastname2f.setVisible(true);
+        idl.setVisible(true);
+        idf.setVisible(true);
+        userl.setVisible(true);
+        userf.setVisible(true);
+        fechainil.setVisible(true);
+        fechainif.setVisible(true);
+        fechafinl.setVisible(true);
+        fechafinf.setVisible(true);
+        buscar.setVisible(true);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
@@ -302,27 +452,59 @@ public class FormularioAdmin extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-        p11.setVisible(true);
-        p22.setVisible(false);
+
+        MyConnection mc=null;
+        CallableStatement cs;
+        try {
+            cs= mc.getConnection().prepareCall("call empresa_qpuestos()");
+            ResultSet rs = cs.executeQuery();
+            while (rs.next()) {
+            System.out.println("Nombre = " + rs.getString(1) + ", Total= " + rs.getInt(2));
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(FormularioAdmin.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void jMenu1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu1ActionPerformed
-        // TODO add your handling code here:
+        // TODO add your handling code here
     }//GEN-LAST:event_jMenu1ActionPerformed
+
+    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+        p11.setVisible(false);
+    }//GEN-LAST:event_jMenuItem3ActionPerformed
+
+    private void buscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarActionPerformed
+        //USUARIOS SIN CAMBIAR CLAVE
+        t.usuariosSinCambio(tabla);
+        String nombre = nombref.getSelectedItem().toString();
+        String edadde = edadfinf.getDate().toString();
+        String edadhasta = edadinif.getDate().toString();
+        String publide = fechainif.getDate().toString();
+        String publihasta = fechafinf.getDate().toString();
+        DefaultTableModel modelo = new DefaultTableModel();
+        this.tabla.setModel(modelo);
+        
+    }//GEN-LAST:event_buscarActionPerformed
+
+    private void userfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userfActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_userfActionPerformed
    
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox<String> edadf1;
-    private javax.swing.JLabel edadl1;
-    private com.toedter.calendar.JDateChooser fechafinf1;
-    private com.toedter.calendar.JDateChooser fechafinf2;
-    private javax.swing.JLabel fechafinl1;
-    private javax.swing.JLabel fechafinl2;
-    private com.toedter.calendar.JDateChooser fechainif1;
-    private com.toedter.calendar.JDateChooser fechainif2;
-    private javax.swing.JLabel fechainil1;
-    private javax.swing.JLabel fechainil2;
-    private javax.swing.JComboBox<String> gradof1;
-    private javax.swing.JLabel gradol1;
+    private javax.swing.JButton buscar;
+    private javax.swing.JButton buscar2;
+    private com.toedter.calendar.JDateChooser edadfinf;
+    private javax.swing.JLabel edadfinl;
+    private com.toedter.calendar.JDateChooser edadinif;
+    private javax.swing.JLabel edadinil;
+    private com.toedter.calendar.JDateChooser fechafinf;
+    private javax.swing.JLabel fechafinl;
+    private com.toedter.calendar.JDateChooser fechainif;
+    private javax.swing.JLabel fechainil;
+    private javax.swing.JComboBox<String> gradof;
+    private javax.swing.JLabel gradol;
     private javax.swing.JTextField idf;
     private javax.swing.JLabel idl;
     private javax.swing.JMenu jMenu1;
@@ -341,16 +523,21 @@ public class FormularioAdmin extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JMenuItem jMenuItem8;
     private javax.swing.JMenuItem jMenuItem9;
-    private javax.swing.JTextField lastname1f;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTable jTable1;
     private javax.swing.JTextField lastname2f;
     private javax.swing.JLabel lastname2l;
+    private javax.swing.JTextField lastnamef;
     private javax.swing.JLabel lastnamel;
     private javax.swing.JTextField namef;
     private javax.swing.JLabel namel;
     private javax.swing.JComboBox<String> nombref;
-    private javax.swing.JLabel nombrel1;
+    private javax.swing.JLabel nombrel;
     private javax.swing.JPanel p11;
-    private javax.swing.JPanel p22;
-    private javax.swing.JPanel paneltabla;
+    private javax.swing.JTable tabla;
+    private javax.swing.JTextField userf;
+    private javax.swing.JLabel userl;
     // End of variables declaration//GEN-END:variables
 }
