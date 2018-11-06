@@ -1,10 +1,11 @@
 Delimiter $$
 
-CREATE PROCEDURE `getCompanyWithJobs`()
+CREATE PROCEDURE `getCOMPANYwithjobs`()
 MODIFIES SQL DATA
 BEGIN
-  SELECT industry.name, count()FROM user
-  where id_user = ifnull (pid_user,id_user);
+  SELECT person.name as PERSON, count(jobxperson) AS Jobxperson
+  FROM person p inner join jobxperson jxp
+  on p.ID_TYPEPERSON=3 and jxp.id_person = p.id_person;
 END$$
 
 delimiter ;

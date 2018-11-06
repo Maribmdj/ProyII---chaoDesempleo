@@ -2,15 +2,12 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-<<<<<<< HEAD
-        <group/>
-=======
         <group>
-            <file>file:/D:/Programming/Java/chaoDesempleoProyII/ChaoDesempleo/src/chaodesempleo/Login.java</file>
-            <file>file:/D:/Programming/Java/chaoDesempleoProyII/ChaoDesempleo/src/chaodesempleo/databaseManager.java</file>
-            <file>file:/D:/Programming/Java/chaoDesempleoProyII/ChaoDesempleo/src/chaodesempleo/Registro.java</file>
-            <file>file:/D:/Programming/Java/chaoDesempleoProyII/ChaoDesempleo/src/chaodesempleo/ChaoDesempleo.java</file>
+<<<<<<< HEAD
+            <file>file:/C:/Users/Mariela/Documents/GitHub/chaoDesempleoProyII/ChaoDesempleo/src/chaodesempleo/FormularioAdmin.java</file>
+=======
+            <file>file:/C:/Users/Nakisha%20Dixon/Documents/GitHub/chaoDesempleoProyII/ChaoDesempleo/src/chaodesempleo/ChaoDesempleo.java</file>
+>>>>>>> 61f42a5ca1449c6ddc87ee3e59cc147d0e9c59da
         </group>
->>>>>>> ed41c1927f20291276edd464d88fea353a5ce02a
     </open-files>
 </project-private>
