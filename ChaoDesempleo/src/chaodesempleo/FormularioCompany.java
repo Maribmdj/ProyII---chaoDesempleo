@@ -17,7 +17,7 @@ public class FormularioCompany extends javax.swing.JFrame {
     public FormularioCompany() {
         initComponents();
         p33.setVisible(false);
-        paneltabla(false);
+        paneltabla.setVisible(false);
        
     }
 
