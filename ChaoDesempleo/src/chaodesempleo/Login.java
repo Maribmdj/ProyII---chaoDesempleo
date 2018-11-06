@@ -220,6 +220,7 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_btnIngresarActionPerformed
 
     private void lblCrearCuentaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCrearCuentaMouseClicked
+        this.setVisible(false);
         Registro rgt = new Registro();
         rgt.setVisible(true);
     }//GEN-LAST:event_lblCrearCuentaMouseClicked
