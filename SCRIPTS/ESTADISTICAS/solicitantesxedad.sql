@@ -1,5 +1,4 @@
 Delimiter $$
-
 CREATE PROCEDURE `SolicitantesxEdad`()
 MODIFIES SQL DATA
 BEGIN
@@ -12,7 +11,7 @@ BEGIN
     SUM(IF(age BETWEEN 66 and 75,1,0)) as '66 - 75',
     SUM(IF(age BETWEEN 76 and 85,1,0)) as '75 - 85',
     SUM(IF(age > 85,1,0)) as 'Over 85'
-	FROM (select YEAR(CURDATE()) - YEAR(p.birthdate) as 'age' from person p, jobxperson j where p.id_person = j.id_person) as ages;
+	FROM (select YEAR(CURDATE()) - YEAR(p.birthdate) as 'age' from person p, jobxperson j where p.id_person = j.id_person and p.id_typeperson = 3) as ages;
 
 END$$
 
