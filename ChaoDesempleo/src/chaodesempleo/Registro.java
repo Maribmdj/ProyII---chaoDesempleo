@@ -6,8 +6,6 @@
 package chaodesempleo;
 
 import java.io.File;
-import java.sql.Date;
-import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.logging.Level;
@@ -15,7 +13,10 @@ import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
-import Utilidades.*;
+import java.sql.CallableStatement;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.util.Date;
 
 /**
  *
@@ -328,28 +329,26 @@ public class Registro extends javax.swing.JFrame {
             {
                 JOptionPane.showMessageDialog(null, "Add A Password");
             }
-           
-            PreparedStatement ps;
-            int s = ChaoDesempleo.dbManager.insert_person(`nidentif`,`name`, `lasname1`, `lastname2`, `nationality`,`birthdate`, `photo`) VALUES (?,?,?,?,?,?.?)";
+            Connection con;
+            CallableStatement cs;
             try {
-            ps = MyConnection.getConnection().prepareStatement(query);
-            ps.setString(1, identif);
-            ps.setString(2, nombre);
-            ps.setString(3, apellido1); 
-            ps.setString(4, apellido2); 
-            ps.setString(5, identif); 
-            ps.setString(6, nacionalidad);
-             if(fechanaci != null)
-            {
-             SimpleDateFormat dateformat = new SimpleDateFormat("DD/MM/YYYY");
-             fechanaci = dateformat.format(datef.getDate());
-             ps.setString(5, fechanaci);
-            }else{
-                ps.setNull(7, 0);
-            }
-             } catch (SQLException ex) {
+            con = DriverManager.getConnection("jdbc:mysql://localhost/test","root","Naki2000+");
+            cs = con.prepareCall("{ call insert_person(?,?,?,?,?,?,?,?,?,?)}");
+            cs.setString("nidentif", nidentif.getText());
+            cs.setString("name",nombref.getText());
+            cs.setString("lastname1", apellido1f.getText());
+            cs.setString("lastname2",apellido2f.getText());
+            cs.setDate("bithdate", (java.sql.Date) datef.getDate());
+            cs.setString("photo",null);
+            cs.setInt("id_typeperson", 1);
+            cs.setString("id_nationality",null);
+            cs.setString("id_industry", null);
+            cs.setString("id_distrito",null);
+            cs.executeUpdate();
+            }catch (SQLException ex) {
             Logger.getLogger(Registro.class.getName()).log(Level.SEVERE, null, ex);
-            } 
+            }
+             
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void apellido2fActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_apellido2fActionPerformed

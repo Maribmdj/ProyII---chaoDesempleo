@@ -5,6 +5,7 @@
  */
 package Utilidades;
 
+import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.DriverManager;
 
@@ -23,7 +24,7 @@ public class MyConnection {
         Connection con = null;
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            con = DriverManager.getConnection("jdbc:mysql://localhost/java_login_register", "root", "");
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/chaoDesempleo?autoReconnect=true&useSSL=false", "root", "Naki2000+");
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
         }
