@@ -330,7 +330,7 @@ public class Registro extends javax.swing.JFrame {
             }
            
             PreparedStatement ps;
-            String query = "INSERT INTO `person`(`nidentif`,`name`, `lasname1`, `lastname2`, `nationality`,`birthdate`, `photo`) VALUES (?,?,?,?,?,?.?)";
+            int s = ChaoDesempleo.dbManager.insert_person(`nidentif`,`name`, `lasname1`, `lastname2`, `nationality`,`birthdate`, `photo`) VALUES (?,?,?,?,?,?.?)";
             try {
             ps = MyConnection.getConnection().prepareStatement(query);
             ps.setString(1, identif);

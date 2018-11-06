@@ -16,8 +16,8 @@ public class FormularioCompany extends javax.swing.JFrame {
      */
     public FormularioCompany() {
         initComponents();
-        p33.setVisible(false);
-        paneltabla(false);
+        p33.setVisible(false); 
+        j1.setVisible(false);
        
     }
 
@@ -33,16 +33,14 @@ public class FormularioCompany extends javax.swing.JFrame {
         p33 = new javax.swing.JPanel();
         namel = new javax.swing.JLabel();
         puestol = new javax.swing.JLabel();
-        rangol = new javax.swing.JLabel();
         fechainil2 = new javax.swing.JLabel();
         fechainif2 = new com.toedter.calendar.JDateChooser();
         fechafinl2 = new javax.swing.JLabel();
         fechafinf2 = new com.toedter.calendar.JDateChooser();
         nombref = new javax.swing.JComboBox<>();
         puestof = new javax.swing.JComboBox<>();
-        rangof = new javax.swing.JComboBox<>();
         jButton1 = new javax.swing.JButton();
-        paneltabla = new javax.swing.JPanel();
+        j1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jMenuBar1 = new javax.swing.JMenuBar();
@@ -64,9 +62,7 @@ public class FormularioCompany extends javax.swing.JFrame {
 
         puestol.setText("Puesto");
 
-        rangol.setText("Rango de Edad");
-
-        fechainil2.setText("                  de: ");
+        fechainil2.setText("Solicitud de: ");
 
         fechainif2.setDateFormatString("DD/MM/YYYY");
         fechainif2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -80,8 +76,6 @@ public class FormularioCompany extends javax.swing.JFrame {
 
         puestof.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        rangof.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
         jButton1.setText("Buscar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -94,54 +88,52 @@ public class FormularioCompany extends javax.swing.JFrame {
         p33Layout.setHorizontalGroup(
             p33Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(p33Layout.createSequentialGroup()
-                .addGap(93, 93, 93)
-                .addComponent(fechainil2)
-                .addGap(4, 4, 4)
-                .addComponent(fechainif2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(25, 25, 25)
-                .addComponent(fechafinl2)
-                .addGap(10, 10, 10)
-                .addComponent(fechafinf2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(p33Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(namel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(nombref, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(puestol)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(puestof, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(rangol)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(rangof, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addGap(32, 32, 32))
+                .addGroup(p33Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(p33Layout.createSequentialGroup()
+                        .addComponent(fechainil2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(fechainif2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10)
+                        .addComponent(fechafinl2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(fechafinf2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton1))
+                    .addGroup(p33Layout.createSequentialGroup()
+                        .addComponent(namel, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(nombref, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(puestol)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(puestof, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         p33Layout.setVerticalGroup(
             p33Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(p33Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(p33Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(namel)
-                    .addComponent(puestol)
-                    .addComponent(rangol)
-                    .addComponent(nombref, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(puestof, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(rangof, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1))
-                .addGap(18, 18, 18)
-                .addGroup(p33Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(fechainil2)
-                    .addComponent(fechainif2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(fechafinl2)
-                    .addComponent(fechafinf2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(p33Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jButton1)
+                    .addGroup(p33Layout.createSequentialGroup()
+                        .addGroup(p33Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(namel)
+                            .addComponent(puestol)
+                            .addComponent(nombref, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(puestof, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(p33Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(p33Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(fechainif2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(fechainil2))
+                            .addComponent(fechafinl2, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(fechafinf2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(15, Short.MAX_VALUE))
         );
 
-        paneltabla.setBackground(new java.awt.Color(255, 255, 255));
+        j1.setBackground(new java.awt.Color(255, 255, 255));
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -153,18 +145,18 @@ public class FormularioCompany extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(jTable1);
 
-        javax.swing.GroupLayout paneltablaLayout = new javax.swing.GroupLayout(paneltabla);
-        paneltabla.setLayout(paneltablaLayout);
-        paneltablaLayout.setHorizontalGroup(
-            paneltablaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(paneltablaLayout.createSequentialGroup()
+        javax.swing.GroupLayout j1Layout = new javax.swing.GroupLayout(j1);
+        j1.setLayout(j1Layout);
+        j1Layout.setHorizontalGroup(
+            j1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(j1Layout.createSequentialGroup()
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 559, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(20, Short.MAX_VALUE))
         );
-        paneltablaLayout.setVerticalGroup(
-            paneltablaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(paneltablaLayout.createSequentialGroup()
+        j1Layout.setVerticalGroup(
+            j1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(j1Layout.createSequentialGroup()
                 .addGap(21, 21, 21)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -211,14 +203,14 @@ public class FormularioCompany extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(p33, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(paneltabla, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(j1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(p33, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(paneltabla, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(j1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -229,7 +221,7 @@ public class FormularioCompany extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-           paneltabla.setVisible(true);
+           j1.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     
@@ -238,6 +230,7 @@ public class FormularioCompany extends javax.swing.JFrame {
     private javax.swing.JLabel fechafinl2;
     private com.toedter.calendar.JDateChooser fechainif2;
     private javax.swing.JLabel fechainil2;
+    private javax.swing.JPanel j1;
     private javax.swing.JButton jButton1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu3;
@@ -254,10 +247,7 @@ public class FormularioCompany extends javax.swing.JFrame {
     private javax.swing.JLabel namel;
     private javax.swing.JComboBox<String> nombref;
     private javax.swing.JPanel p33;
-    private javax.swing.JPanel paneltabla;
     private javax.swing.JComboBox<String> puestof;
     private javax.swing.JLabel puestol;
-    private javax.swing.JComboBox<String> rangof;
-    private javax.swing.JLabel rangol;
     // End of variables declaration//GEN-END:variables
 }

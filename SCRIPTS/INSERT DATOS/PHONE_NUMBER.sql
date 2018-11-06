@@ -1,5 +1,4 @@
-call insert_pnumber('85013501',1);
-call insert_pnumber('85113502',2);
+
 call insert_pnumber('85213503',3);
 call insert_pnumber('85313504',4);
 call insert_pnumber('85413505',5);

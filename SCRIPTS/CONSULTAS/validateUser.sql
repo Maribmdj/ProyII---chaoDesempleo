@@ -8,7 +8,10 @@ READS SQL DATA
 DETERMINISTIC
 BEGIN
 	DECLARE i INT;
-	select id_user from user where user = username and password = ppassword INTO i;
+    select p.id_typeperson from user
+    u inner join person p
+    on u.id_person=p.id_person and u.user=username 
+    and u.password=ppassword into i;
 	if ((select i)!= 0)
 	then
 		return (select i);
