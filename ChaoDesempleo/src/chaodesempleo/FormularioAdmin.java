@@ -58,7 +58,7 @@ public class FormularioAdmin extends javax.swing.JFrame {
         gradol.setVisible(false);
         
         //BOTONES
-        btnbuscarC1.setVisible(false);
+        btnbuscarC2.setVisible(false);
         buscar2.setVisible(false);
         
         //PANELES Y COMBOBOX
@@ -107,7 +107,7 @@ public class FormularioAdmin extends javax.swing.JFrame {
         lastname2f = new javax.swing.JTextField();
         idl = new javax.swing.JLabel();
         idf = new javax.swing.JTextField();
-        btnbuscarC1 = new javax.swing.JButton();
+        btnbuscarC2 = new javax.swing.JButton();
         userl = new javax.swing.JLabel();
         userf = new javax.swing.JTextField();
         buscar2 = new javax.swing.JButton();
@@ -217,11 +217,11 @@ public class FormularioAdmin extends javax.swing.JFrame {
 
         idf.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
 
-        btnbuscarC1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        btnbuscarC1.setText("Buscar");
-        btnbuscarC1.addActionListener(new java.awt.event.ActionListener() {
+        btnbuscarC2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnbuscarC2.setText("Buscar");
+        btnbuscarC2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnbuscarC1ActionPerformed(evt);
+                btnbuscarC2ActionPerformed(evt);
             }
         });
 
@@ -317,7 +317,7 @@ public class FormularioAdmin extends javax.swing.JFrame {
                     .addGroup(p11Layout.createSequentialGroup()
                         .addGroup(p11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(buscar2)
-                            .addComponent(btnbuscarC1))
+                            .addComponent(btnbuscarC2))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addGap(10, 10, 10))
             .addComponent(pTitulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -380,7 +380,7 @@ public class FormularioAdmin extends javax.swing.JFrame {
                             .addComponent(gradof, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(gradol))
                         .addGap(18, 18, 18)
-                        .addComponent(btnbuscarC1)
+                        .addComponent(btnbuscarC2)
                         .addGap(7, 7, 7)
                         .addComponent(buscar2)
                         .addGap(19, 19, 19))))
@@ -554,7 +554,7 @@ public class FormularioAdmin extends javax.swing.JFrame {
         fechainif.setVisible(true);
         fechafinl.setVisible(true);
         fechafinf.setVisible(true);
-        btnbuscarC1.setVisible(true);
+        btnbuscarC2.setVisible(true);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
@@ -563,6 +563,12 @@ public class FormularioAdmin extends javax.swing.JFrame {
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
         lblTitulo.setText("EMPRESAS ASOCIADAS");
+<<<<<<< HEAD
+        lblTitulo.setVisible(true);
+        pTitulo.setVisible(true);
+        p11.setVisible(true);
+=======
+>>>>>>> 833d8743a8bfcf24ad872956d8a0838e4285f31e
         try {
             this.tabla.setModel(modelo);
             ResultSet r;
@@ -579,9 +585,7 @@ public class FormularioAdmin extends javax.swing.JFrame {
                 }               
                 modelo.addRow(fila);
             }        
-        } catch (SQLException ex) {
-            Logger.getLogger(FormularioAdmin.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        } catch  (Exception e) {e.printStackTrace();}
         
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
@@ -590,10 +594,16 @@ public class FormularioAdmin extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenu1ActionPerformed
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
-        p11.setVisible(false);
+        lblTitulo.setText("PUESTOS DE TRABAJO");
+        lblTitulo.setVisible(true);
+        pTitulo.setVisible(true);
+        p11.setVisible(true);
+        
+        
+        
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
-    private void btnbuscarC1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnbuscarC1ActionPerformed
+    private void btnbuscarC2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnbuscarC2ActionPerformed
         //USUARIOS SIN CAMBIAR CLAVE
         t.usuariosSinCambio(tabla);
         String nombre = nombref.getSelectedItem().toString();
@@ -604,7 +614,7 @@ public class FormularioAdmin extends javax.swing.JFrame {
         DefaultTableModel modelo = new DefaultTableModel();
         this.tabla.setModel(modelo);
         
-    }//GEN-LAST:event_btnbuscarC1ActionPerformed
+    }//GEN-LAST:event_btnbuscarC2ActionPerformed
 
     private void userfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userfActionPerformed
         // TODO add your handling code here:
@@ -761,7 +771,7 @@ public class FormularioAdmin extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem12ActionPerformed
    
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnbuscarC1;
+    private javax.swing.JButton btnbuscarC2;
     private javax.swing.JButton buscar2;
     private com.toedter.calendar.JDateChooser edadfinf;
     private javax.swing.JLabel edadfinl;
