@@ -563,12 +563,9 @@ public class FormularioAdmin extends javax.swing.JFrame {
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
         lblTitulo.setText("EMPRESAS ASOCIADAS");
-<<<<<<< HEAD
         lblTitulo.setVisible(true);
         pTitulo.setVisible(true);
         p11.setVisible(true);
-=======
->>>>>>> 833d8743a8bfcf24ad872956d8a0838e4285f31e
         try {
             this.tabla.setModel(modelo);
             ResultSet r;
