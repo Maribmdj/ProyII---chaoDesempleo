@@ -182,7 +182,7 @@ public class FormularioCompany extends javax.swing.JFrame {
 
         jMenu3.setText("Estadísticas");
 
-        jMenuItem7.setText("Solicitantes");
+        jMenuItem7.setText("Edades de solicitantes");
         jMenuItem7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem7ActionPerformed(evt);
@@ -214,6 +214,26 @@ public class FormularioCompany extends javax.swing.JFrame {
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
         p33.setVisible(true);
+        DefaultTableModel modelo = new DefaultTableModel(0,0);
+        try {
+            this.jTable1.setModel(modelo);
+            ResultSet r;
+            r = ChaoDesempleo.dbManager.solicitantexempresa(ChaoDesempleo.currentUser);
+            ResultSetMetaData rsMd = r.getMetaData();
+            int cntddColumnas = rsMd.getColumnCount();
+            for (int i=1; i<=cntddColumnas; i++){
+                    modelo.addColumn(rsMd.getColumnLabel(i));
+            }
+            while (r.next()){
+                Object[] fila = new Object[cntddColumnas];
+                for(int i=0; i<cntddColumnas; i++){
+                    fila[i]=r.getObject(i+1);
+                }               
+                modelo.addRow(fila);
+            }        
+        } catch (SQLException ex) {
+            Logger.getLogger(FormularioAdmin.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -226,7 +246,7 @@ public class FormularioCompany extends javax.swing.JFrame {
         try {
             this.jTable1.setModel(modelo);
             ResultSet r;
-            r = ChaoDesempleo.dbManager.solicitantexempresa(ChaoDesempleo.currentUser);
+            r = ChaoDesempleo.dbManager.edadesxempresa(ChaoDesempleo.currentUser);
             ResultSetMetaData rsMd = r.getMetaData();
             int cntddColumnas = rsMd.getColumnCount();
             for (int i=1; i<=cntddColumnas; i++){

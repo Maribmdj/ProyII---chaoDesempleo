@@ -14,6 +14,13 @@ public class databaseManager {
     String sql = null;
     String url = null;
     static ResultSet rs;
+<<<<<<< HEAD
+=======
+
+
+=======
+>>>>>>> e45775ef7bc9e4ae9deafe53f9ab28052599a654
+>>>>>>> 7e9548d5f4f186f4c812bdbed6a1f683474dcdbb
     public static databaseManager getManager(String url, String username, String pw){
         if(manager == null)
         {
@@ -53,6 +60,25 @@ public class databaseManager {
         result = cs.getInt(1);
         return result;
     }
+    public ResultSet mostrarEmpresa() throws SQLException{
+        sql = "{call getPersonCB()}";
+        Statement s = conexion.createStatement();
+        rs = s.executeQuery(sql);
+        return rs;             
+    }
+    public ResultSet mostrarGradoA() throws SQLException{
+        sql = "{call getADegreeCB()}";
+        Statement s = conexion.createStatement();
+        rs = s.executeQuery(sql);
+        return rs;             
+    }
+    
+    public ResultSet mostrarPuesto() throws SQLException{
+        sql = "{call getJobPositionCB()}";
+        Statement s = conexion.createStatement();
+        rs = s.executeQuery(sql);
+        return rs;             
+    } 
     
     public int getTypeByUser(int id) throws SQLException{
         String sql = "{call gettypebyuser("+id+")}";
@@ -67,6 +93,10 @@ public class databaseManager {
     public ResultSet empresa_QPuestos() throws SQLException{
         sql = "{call empresa_qpuestos()}";
         String sql = "{call empresa_qpuestos()}";
+<<<<<<< HEAD
+=======
+>>>>>>> e45775ef7bc9e4ae9deafe53f9ab28052599a654
+>>>>>>> 7e9548d5f4f186f4c812bdbed6a1f683474dcdbb
         Statement s = conexion.createStatement();
         ResultSet rs = s.executeQuery(sql);
         return rs;             
@@ -74,8 +104,17 @@ public class databaseManager {
     
     public ResultSet Puestos(String pEmpresa, String pPuesto, String pEdad1, String pEdad2, String pGradoA, String pPublicado1, String pPublicado2) throws SQLException
     {
+<<<<<<< HEAD
         String sql = "{call puestos(?,?,?,?,?,?,?)}";
         Statement s = conexion.createStatement();
+=======
+<<<<<<< HEAD
+        sql = "{call LISTADO_PUESTOS(?,?,?,?,?,?,?)}";
+        //Statement s = conexion.createStatement();
+=======
+        String sql = "{call LISTADO_PUESTOS(?,?,?,?,?,?,?)}";
+>>>>>>> e45775ef7bc9e4ae9deafe53f9ab28052599a654
+>>>>>>> 7e9548d5f4f186f4c812bdbed6a1f683474dcdbb
         
         CallableStatement cs = conexion.prepareCall(sql);     
         cs.setString(1, pEmpresa);
@@ -85,54 +124,72 @@ public class databaseManager {
         cs.setString(5, pGradoA);
         cs.setString(6, pPublicado1);
         cs.setString(7, pPublicado2);
+<<<<<<< HEAD
         rs = cs.executeQuery(sql); 
         return rs;  
+=======
+<<<<<<< HEAD
+        
+        rs = cs.executeQuery(sql);
+        return rs;
+=======
+        ResultSet rs = cs.executeQuery(sql);
+        return rs; 
+>>>>>>> e45775ef7bc9e4ae9deafe53f9ab28052599a654
+>>>>>>> 7e9548d5f4f186f4c812bdbed6a1f683474dcdbb
     }
     
     public ResultSet empresaxjobs(int i) throws SQLException{
-        String sql = "{call empresaxjobs(" + i + ")}";
+         sql = "{call empresaxjobs(" + i + ")}";
         Statement cs = conexion.createStatement();
-        ResultSet rs = cs.executeQuery(sql);
+         rs = cs.executeQuery(sql);
         return rs;
     }    
     
     public ResultSet SolicitantesxProvincia() throws SQLException{
-        String sql = "{call SolicitantesxProvincia()}";
+         sql = "{call SolicitantesxProvincia()}";
         Statement cs = conexion.createStatement();
-        ResultSet rs = cs.executeQuery(sql);
+         rs = cs.executeQuery(sql);
         return rs;
     }    
 
     public ResultSet SolicitantesxEdad() throws SQLException{
-        String sql = "{call SolicitantesxEdad()}";
+         sql = "{call SolicitantesxEdad()}";
         Statement cs = conexion.createStatement();
-        ResultSet rs = cs.executeQuery(sql);
+         rs = cs.executeQuery(sql);
         return rs;
     }
 
     public ResultSet SolicitantesxDistrito() throws SQLException{
-        String sql = "{call SolicitantesxDistrito()}";
+         sql = "{call SolicitantesxDistrito()}";
         Statement cs = conexion.createStatement();
-        ResultSet rs = cs.executeQuery(sql);
+         rs = cs.executeQuery(sql);
         return rs;
     }    
 
     public ResultSet SolicitantesxCanton() throws SQLException{
-        String sql = "{call SolicitantesxCanton()}";
+         sql = "{call SolicitantesxCanton()}";
         Statement cs = conexion.createStatement();
-        ResultSet rs = cs.executeQuery(sql);
+         rs = cs.executeQuery(sql);
         return rs;
     }
 
     public ResultSet jobxsolicitantes(int i) throws SQLException{
-        String sql = "{call jobxsolicitantes(" + i + ")}";
+         sql = "{call jobxsolicitantes(" + i + ")}";
         Statement cs = conexion.createStatement();
-        ResultSet rs = cs.executeQuery(sql);
+         rs = cs.executeQuery(sql);
         return rs;
     }
     
     public ResultSet solicitantexempresa(int i) throws SQLException{
         String sql = "{call solicitantexempresa(" + i + ")}";
+        Statement cs = conexion.createStatement();
+        ResultSet rs = cs.executeQuery(sql);
+        return rs;
+    }
+    
+    public ResultSet edadesxempresa(int i) throws SQLException{
+        String sql = "{call edadesxempresa(" + i + ")}";
         Statement cs = conexion.createStatement();
         ResultSet rs = cs.executeQuery(sql);
         return rs;
