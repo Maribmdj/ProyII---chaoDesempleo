@@ -798,10 +798,11 @@ public class FormularioAdmin extends javax.swing.JFrame {
                     fila[i]=r.getObject(i+1);
                 }               
                 modelo.addRow(fila);
-            }        
+            }     
         } catch (SQLException ex) {
             Logger.getLogger(FormularioAdmin.class.getName()).log(Level.SEVERE, null, ex);
         }
+                
     }//GEN-LAST:event_jMenuItem7ActionPerformed
 
     private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
