@@ -14,13 +14,7 @@ public class databaseManager {
     String sql = null;
     String url = null;
     static ResultSet rs;
-<<<<<<< HEAD
-=======
 
-
-=======
->>>>>>> e45775ef7bc9e4ae9deafe53f9ab28052599a654
->>>>>>> 7e9548d5f4f186f4c812bdbed6a1f683474dcdbb
     public static databaseManager getManager(String url, String username, String pw){
         if(manager == null)
         {
@@ -93,10 +87,6 @@ public class databaseManager {
     public ResultSet empresa_QPuestos() throws SQLException{
         sql = "{call empresa_qpuestos()}";
         String sql = "{call empresa_qpuestos()}";
-<<<<<<< HEAD
-=======
->>>>>>> e45775ef7bc9e4ae9deafe53f9ab28052599a654
->>>>>>> 7e9548d5f4f186f4c812bdbed6a1f683474dcdbb
         Statement s = conexion.createStatement();
         ResultSet rs = s.executeQuery(sql);
         return rs;             
@@ -104,17 +94,7 @@ public class databaseManager {
     
     public ResultSet Puestos(String pEmpresa, String pPuesto, String pEdad1, String pEdad2, String pGradoA, String pPublicado1, String pPublicado2) throws SQLException
     {
-<<<<<<< HEAD
         String sql = "{call puestos(?,?,?,?,?,?,?)}";
-        Statement s = conexion.createStatement();
-=======
-<<<<<<< HEAD
-        sql = "{call LISTADO_PUESTOS(?,?,?,?,?,?,?)}";
-        //Statement s = conexion.createStatement();
-=======
-        String sql = "{call LISTADO_PUESTOS(?,?,?,?,?,?,?)}";
->>>>>>> e45775ef7bc9e4ae9deafe53f9ab28052599a654
->>>>>>> 7e9548d5f4f186f4c812bdbed6a1f683474dcdbb
         
         CallableStatement cs = conexion.prepareCall(sql);     
         cs.setString(1, pEmpresa);
@@ -124,19 +104,9 @@ public class databaseManager {
         cs.setString(5, pGradoA);
         cs.setString(6, pPublicado1);
         cs.setString(7, pPublicado2);
-<<<<<<< HEAD
         rs = cs.executeQuery(sql); 
         return rs;  
-=======
-<<<<<<< HEAD
-        
-        rs = cs.executeQuery(sql);
-        return rs;
-=======
-        ResultSet rs = cs.executeQuery(sql);
-        return rs; 
->>>>>>> e45775ef7bc9e4ae9deafe53f9ab28052599a654
->>>>>>> 7e9548d5f4f186f4c812bdbed6a1f683474dcdbb
+
     }
     
     public ResultSet empresaxjobs(int i) throws SQLException{

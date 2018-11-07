@@ -19,18 +19,8 @@ public class ChaoDesempleo {
 
     
     public static void main(String[] args) {
-<<<<<<< HEAD
          dbManager = databaseManager.getManager("jdbc:mysql://localhost:3306/chaodesempleo?verifyServerCertificate=false&useSSL=true", "root", "Naki2000+");
-=======
-<<<<<<< HEAD
-        //Alvaro
-        //dbManager = databaseManager.getManager("jdbc:mysql://localhost:3306/chaodesempleo?verifyServerCertificate=false&useSSL=true", "root", "mysql");
-        //Mariela
-        dbManager = databaseManager.getManager("jdbc:mysql://localhost:3306/chaodesempleo?verifyServerCertificate=false&useSSL=true", "root", "Mysql");
-=======
-         dbManager = databaseManager.getManager("jdbc:mysql://localhost:3306/chaodesempleo?verifyServerCertificate=false&useSSL=true", "root", "mysql");
->>>>>>> e45775ef7bc9e4ae9deafe53f9ab28052599a654
->>>>>>> 7e9548d5f4f186f4c812bdbed6a1f683474dcdbb
+
 
         if(dbManager.getConexion()!= null){
             System.out.println("Database connected");

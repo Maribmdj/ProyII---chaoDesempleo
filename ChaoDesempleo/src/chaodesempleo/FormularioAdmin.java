@@ -12,6 +12,7 @@ import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JFrame;
 /**
  *
  * @author Mariela
@@ -24,39 +25,12 @@ public class FormularioAdmin extends javax.swing.JFrame {
     Tabla t = new Tabla();
     databaseManager conectar;
     DefaultTableModel modelo = new DefaultTableModel();
-<<<<<<< HEAD
-        public String pnombre = "";
-        public String papellido1 = "";
-        public String papellido2 = "";
-        public String pcedula = "";
-        public String puser = "";
-        
-        public String pEdad1 = "1960/01/01";
-        public String pEdad2 = "2000/01/01";
-        public String pfecha1 = "2018/10/01";
-        public String pfecha2 = "2018/12/31";
-        
-        public String pEmpresa = "";
-        public String pGAcademico = "";
-        public String pPuesto = "";
-        
-        
-    public FormularioAdmin() {
-        initComponents();
-        p11.setVisible(false);
-        InvisiblesComp();
-       
-       
-    }
-     public void InvisiblesComp()
-=======
     
     public void InvisiblesComp()
->>>>>>> e45775ef7bc9e4ae9deafe53f9ab28052599a654
     {
         //LABELS
         userl.setVisible(false);
-        lblEmpresa.setVisible(false);
+        nombrel.setVisible(false);
         namel.setVisible(false);
         fechainil.setVisible(false);
         fechafinl.setVisible(false);
@@ -65,83 +39,26 @@ public class FormularioAdmin extends javax.swing.JFrame {
         idl.setVisible(false);
         lastnamel.setVisible(false);
         lastname2l.setVisible(false);
-        lblgAcademico.setVisible(false);
+        gradol.setVisible(false);
         
         //BOTONES
         btnbuscarC2.setVisible(false);
-        btnBuscarC3.setVisible(false);
+        buscar2.setVisible(false);
         
         //PANELES Y COMBOBOX
-        txtUser.setVisible(false);
-        cbEmpresa.setVisible(false);
-        txtNombre.setVisible(false);
-        dcFechaI.setVisible(false);
-        dcFechaF.setVisible(false);
-        dcEdadI.setVisible(false);
-        dcEdadF.setVisible(false);
-        txtCedula.setVisible(false);
-        txtApellido1.setVisible(false);
-        txtApellido2.setVisible(false);
-        cbGradoA.setVisible(false);  
-        cbPuesto.setVisible(false);
-        lblPuesto.setVisible(false);
-    }
-    public void LimpiarcbEmpresa(){
-        int ItemCount  = cbEmpresa.getItemCount();
-        for(int i=0; i<ItemCount; i++){
-            cbEmpresa.remove(0);
-        }
-    } 
-     public void llenarCBEmpresa(){
-        LimpiarcbEmpresa();
-        try{           
-            ResultSet r;
-            r = ChaoDesempleo.dbManager.mostrarEmpresa();
-            cbEmpresa.addItem("Seleccione:");
-            while (r.next()){
-                cbEmpresa.addItem(r.getString(1));                
-            }        
-        }catch (Exception e) {e.printStackTrace();}
-    }
-    
-    public void LimpiarcbGradoA(){
-        int ItemCount  = cbGradoA.getItemCount();
-        for(int i=0; i<ItemCount; i++){
-            cbGradoA.remove(0);
-        }
-    } 
-     public void llenarCBGradoA(){
-        LimpiarcbGradoA();
-        try{           
-            ResultSet r;
-            r = ChaoDesempleo.dbManager.mostrarGradoA();
-            cbGradoA.addItem("Seleccione:");
-            while (r.next()){
-                cbGradoA.addItem(r.getString(1));                
-            }        
-        }catch (Exception e) {e.printStackTrace();}
+        userf.setVisible(false);
+        nombref.setVisible(false);
+        namef.setVisible(false);
+        fechainif.setVisible(false);
+        fechafinf.setVisible(false);
+        edadinif.setVisible(false);
+        edadfinf.setVisible(false);
+        idf.setVisible(false);
+        lastnamef.setVisible(false);
+        lastname2f.setVisible(false);
+        gradof.setVisible(false);  
     }
 
-<<<<<<< HEAD
-     public void LimpiarcbPuesto(){
-        int ItemCount  = cbPuesto.getItemCount();
-        for(int i=0; i<ItemCount; i++){
-            cbPuesto.remove(0);
-        }
-    } 
-     public void llenarCBPuesto(){
-        LimpiarcbPuesto();
-        try{           
-            ResultSet r;
-            r = ChaoDesempleo.dbManager.mostrarPuesto();
-            cbPuesto.addItem("Seleccione:");
-            while (r.next()){
-                cbPuesto.addItem(r.getString(1));                
-            }        
-        }catch (Exception e) {e.printStackTrace();}
-    }
-     
-=======
     public FormularioAdmin() {
         initComponents();
         p11.setVisible(false);
@@ -149,7 +66,6 @@ public class FormularioAdmin extends javax.swing.JFrame {
     }
      
 
->>>>>>> e45775ef7bc9e4ae9deafe53f9ab28052599a654
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -162,34 +78,32 @@ public class FormularioAdmin extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         p11 = new javax.swing.JPanel();
-        dcFechaI = new com.toedter.calendar.JDateChooser();
-        dcFechaF = new com.toedter.calendar.JDateChooser();
+        nombrel = new javax.swing.JLabel();
+        fechainif = new com.toedter.calendar.JDateChooser();
+        fechafinf = new com.toedter.calendar.JDateChooser();
         fechainil = new javax.swing.JLabel();
         fechafinl = new javax.swing.JLabel();
-        dcEdadF = new com.toedter.calendar.JDateChooser();
+        nombref = new javax.swing.JComboBox<>();
+        edadfinf = new com.toedter.calendar.JDateChooser();
         edadinil = new javax.swing.JLabel();
         edadfinl = new javax.swing.JLabel();
-        dcEdadI = new com.toedter.calendar.JDateChooser();
+        edadinif = new com.toedter.calendar.JDateChooser();
+        gradol = new javax.swing.JLabel();
+        gradof = new javax.swing.JComboBox<>();
         namel = new javax.swing.JLabel();
-        txtNombre = new javax.swing.JTextField();
+        namef = new javax.swing.JTextField();
         lastnamel = new javax.swing.JLabel();
-        txtApellido1 = new javax.swing.JTextField();
+        lastnamef = new javax.swing.JTextField();
         lastname2l = new javax.swing.JLabel();
-        txtApellido2 = new javax.swing.JTextField();
+        lastname2f = new javax.swing.JTextField();
         idl = new javax.swing.JLabel();
-        txtCedula = new javax.swing.JTextField();
+        idf = new javax.swing.JTextField();
         btnbuscarC2 = new javax.swing.JButton();
         userl = new javax.swing.JLabel();
-        txtUser = new javax.swing.JTextField();
-        btnBuscarC3 = new javax.swing.JButton();
+        userf = new javax.swing.JTextField();
+        buscar2 = new javax.swing.JButton();
         pTitulo = new javax.swing.JPanel();
         lblTitulo = new javax.swing.JLabel();
-        lblEmpresa = new javax.swing.JLabel();
-        lblgAcademico = new javax.swing.JLabel();
-        cbEmpresa = new javax.swing.JComboBox<>();
-        cbGradoA = new javax.swing.JComboBox<>();
-        lblPuesto = new javax.swing.JLabel();
-        cbPuesto = new javax.swing.JComboBox<>();
         jPanel1 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         tabla = new javax.swing.JTable();
@@ -225,16 +139,20 @@ public class FormularioAdmin extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Sistema Administrador");
-        setPreferredSize(new java.awt.Dimension(850, 550));
+        setPreferredSize(new java.awt.Dimension(650, 600));
 
         p11.setBackground(new java.awt.Color(255, 255, 255));
         p11.setPreferredSize(new java.awt.Dimension(650, 70));
 
-        dcFechaI.setDateFormatString("DD/MM/YYYY");
-        dcFechaI.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        nombrel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        nombrel.setForeground(new java.awt.Color(153, 153, 153));
+        nombrel.setText("Nombre Empresa");
 
-        dcFechaF.setDateFormatString("DD/MM/YYYY");
-        dcFechaF.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        fechainif.setDateFormatString("DD/MM/YYYY");
+        fechainif.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+
+        fechafinf.setDateFormatString("DD/MM/YYYY");
+        fechafinf.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
 
         fechainil.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         fechainil.setForeground(new java.awt.Color(153, 153, 153));
@@ -244,8 +162,10 @@ public class FormularioAdmin extends javax.swing.JFrame {
         fechafinl.setForeground(new java.awt.Color(153, 153, 153));
         fechafinl.setText("hasta:");
 
-        dcEdadF.setDateFormatString("DD/MM/YYYY");
-        dcEdadF.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        nombref.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+
+        edadfinf.setDateFormatString("DD/MM/YYYY");
+        edadfinf.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
 
         edadinil.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         edadinil.setForeground(new java.awt.Color(153, 153, 153));
@@ -255,32 +175,38 @@ public class FormularioAdmin extends javax.swing.JFrame {
         edadfinl.setForeground(new java.awt.Color(153, 153, 153));
         edadfinl.setText("Hasta:");
 
-        dcEdadI.setDateFormatString("DD/MM/YYYY");
-        dcEdadI.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        edadinif.setDateFormatString("DD/MM/YYYY");
+        edadinif.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+
+        gradol.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        gradol.setForeground(new java.awt.Color(153, 153, 153));
+        gradol.setText("Grado Academico");
+
+        gradof.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
 
         namel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         namel.setForeground(new java.awt.Color(153, 153, 153));
         namel.setText("Nombre");
 
-        txtNombre.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        namef.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
 
         lastnamel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         lastnamel.setForeground(new java.awt.Color(153, 153, 153));
         lastnamel.setText("Apellido 1");
 
-        txtApellido1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lastnamef.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
 
         lastname2l.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         lastname2l.setForeground(new java.awt.Color(153, 153, 153));
         lastname2l.setText("Apellido 2");
 
-        txtApellido2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lastname2f.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
 
         idl.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         idl.setForeground(new java.awt.Color(153, 153, 153));
         idl.setText("Cedula");
 
-        txtCedula.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        idf.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
 
         btnbuscarC2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         btnbuscarC2.setText("Buscar");
@@ -294,20 +220,15 @@ public class FormularioAdmin extends javax.swing.JFrame {
         userl.setForeground(new java.awt.Color(153, 153, 153));
         userl.setText("Usuario");
 
-        txtUser.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        txtUser.addActionListener(new java.awt.event.ActionListener() {
+        userf.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        userf.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtUserActionPerformed(evt);
+                userfActionPerformed(evt);
             }
         });
 
-        btnBuscarC3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        btnBuscarC3.setText("Buscar");
-        btnBuscarC3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBuscarC3ActionPerformed(evt);
-            }
-        });
+        buscar2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        buscar2.setText("Buscar");
 
         lblTitulo.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         lblTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -324,100 +245,73 @@ public class FormularioAdmin extends javax.swing.JFrame {
             .addComponent(lblTitulo, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
         );
 
-        lblEmpresa.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        lblEmpresa.setForeground(new java.awt.Color(153, 153, 153));
-        lblEmpresa.setText("Empresa");
-
-        lblgAcademico.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        lblgAcademico.setForeground(new java.awt.Color(153, 153, 153));
-        lblgAcademico.setText("Grado Academico");
-
-        cbEmpresa.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-
-        cbGradoA.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-
-        lblPuesto.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        lblPuesto.setForeground(new java.awt.Color(153, 153, 153));
-        lblPuesto.setText("Puesto");
-
-        cbPuesto.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-
         javax.swing.GroupLayout p11Layout = new javax.swing.GroupLayout(p11);
         p11.setLayout(p11Layout);
         p11Layout.setHorizontalGroup(
             p11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pTitulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(p11Layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(p11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(p11Layout.createSequentialGroup()
-                        .addComponent(edadfinl)
-                        .addGap(31, 31, 31)
-                        .addComponent(dcEdadF, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(11, 11, 11)
+                        .addComponent(edadinil))
+                    .addGroup(p11Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(fechainil, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18)
+                .addGroup(p11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(fechainif, javax.swing.GroupLayout.DEFAULT_SIZE, 142, Short.MAX_VALUE)
+                    .addComponent(fechafinf, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(edadinif, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(p11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(p11Layout.createSequentialGroup()
+                        .addGroup(p11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(idl, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(namel, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(p11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(namef, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(idf, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(p11Layout.createSequentialGroup()
+                        .addComponent(lastnamel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(lastnamef, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(28, 28, 28)
+                .addComponent(nombrel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(nombref, 0, 157, Short.MAX_VALUE)
+                .addContainerGap())
+            .addGroup(p11Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(p11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(p11Layout.createSequentialGroup()
                         .addGroup(p11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(p11Layout.createSequentialGroup()
-                                .addGroup(p11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(p11Layout.createSequentialGroup()
-                                        .addGap(1, 1, 1)
-                                        .addComponent(edadinil))
-                                    .addComponent(fechainil, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
-                                .addGroup(p11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(dcFechaI, javax.swing.GroupLayout.DEFAULT_SIZE, 142, Short.MAX_VALUE)
-                                    .addComponent(dcFechaF, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(dcEdadI, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGap(38, 38, 38))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, p11Layout.createSequentialGroup()
-                                .addComponent(fechafinl)
-                                .addGap(73, 73, 73)))
-                        .addGroup(p11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, p11Layout.createSequentialGroup()
-                                .addGap(1, 1, 1)
-                                .addGroup(p11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lblgAcademico)
-                                    .addComponent(lblPuesto)
-                                    .addComponent(btnbuscarC2))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
-                            .addGroup(p11Layout.createSequentialGroup()
-                                .addComponent(lblEmpresa)
-                                .addGap(65, 65, 65)))
+                                .addComponent(edadfinl)
+                                .addGap(31, 31, 31)
+                                .addComponent(edadfinf, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(16, 16, 16)
+                                .addComponent(lastname2l))
+                            .addComponent(userl, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(p11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(p11Layout.createSequentialGroup()
-                                .addGroup(p11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(p11Layout.createSequentialGroup()
-                                        .addGap(86, 86, 86)
-                                        .addComponent(btnBuscarC3)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE))
-                                    .addGroup(p11Layout.createSequentialGroup()
-                                        .addComponent(cbPuesto, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addGap(18, 18, 18)))
-                                .addGroup(p11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(p11Layout.createSequentialGroup()
-                                        .addComponent(lastnamel)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(txtApellido1, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(p11Layout.createSequentialGroup()
-                                        .addGroup(p11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(lastname2l)
-                                            .addComponent(userl, javax.swing.GroupLayout.Alignment.TRAILING))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addGroup(p11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(txtApellido2, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(txtUser, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                            .addGroup(p11Layout.createSequentialGroup()
-                                .addGroup(p11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(cbEmpresa, 0, 200, Short.MAX_VALUE)
-                                    .addComponent(cbGradoA, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGap(18, 18, 18)
-                                .addGroup(p11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(idl, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(namel, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(p11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(txtCedula)
-                                    .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(lastname2f, javax.swing.GroupLayout.DEFAULT_SIZE, 152, Short.MAX_VALUE)
+                            .addComponent(userf))
+                        .addGap(145, 145, 145))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, p11Layout.createSequentialGroup()
+                        .addComponent(fechafinl)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(gradol)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
+                .addGroup(p11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(gradof, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(p11Layout.createSequentialGroup()
+                        .addGroup(p11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(buscar2)
+                            .addComponent(btnbuscarC2))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addGap(10, 10, 10))
+            .addComponent(pTitulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         p11Layout.setVerticalGroup(
             p11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -425,69 +319,62 @@ public class FormularioAdmin extends javax.swing.JFrame {
                 .addComponent(pTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(p11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(namel)
+                    .addGroup(p11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(namef, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(nombrel)
+                        .addComponent(nombref, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(p11Layout.createSequentialGroup()
+                        .addGap(3, 3, 3)
+                        .addComponent(fechainil))
+                    .addComponent(fechainif, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(p11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(p11Layout.createSequentialGroup()
                         .addGroup(p11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(p11Layout.createSequentialGroup()
+                                .addGap(4, 4, 4)
+                                .addGroup(p11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(p11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(idl)
+                                        .addComponent(idf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(fechafinf, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(p11Layout.createSequentialGroup()
                                 .addGap(3, 3, 3)
-                                .addComponent(fechainil))
-                            .addComponent(dcFechaI, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(p11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(p11Layout.createSequentialGroup()
-                                .addGap(10, 10, 10)
-                                .addComponent(dcFechaF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(p11Layout.createSequentialGroup()
-                                .addGap(6, 6, 6)
                                 .addComponent(fechafinl)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(p11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(edadinil)
-                            .addComponent(dcEdadI, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblPuesto))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(p11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(dcEdadF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(edadfinl))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(p11Layout.createSequentialGroup()
                         .addGroup(p11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(p11Layout.createSequentialGroup()
-                                .addGroup(p11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(lblEmpresa)
-                                    .addComponent(cbEmpresa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(4, 4, 4)
-                                .addGroup(p11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(lblgAcademico)
-                                    .addComponent(cbGradoA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(p11Layout.createSequentialGroup()
-                                .addGroup(p11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(namel)
-                                    .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(4, 4, 4)
-                                .addGroup(p11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(idl)
-                                    .addComponent(txtCedula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(p11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(p11Layout.createSequentialGroup()
-                                .addComponent(cbPuesto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGroup(p11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(btnbuscarC2)
-                                    .addComponent(btnBuscarC3)))
-                            .addGroup(p11Layout.createSequentialGroup()
-                                .addGroup(p11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(txtApellido1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lastnamef, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(lastnamel, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(p11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(txtApellido2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(lastname2l))
+                                    .addComponent(lastname2f, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lastname2l)))
+                            .addGroup(p11Layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(p11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(txtUser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(userl, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(0, 9, Short.MAX_VALUE)))))
-                .addContainerGap())
+                                .addGroup(p11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(edadinil)
+                                    .addComponent(edadinif, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(p11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(edadfinf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(edadfinl))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(p11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(userf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(userl, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(25, 25, 25))
+                    .addGroup(p11Layout.createSequentialGroup()
+                        .addGap(14, 14, 14)
+                        .addGroup(p11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(gradof, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(gradol))
+                        .addGap(18, 18, 18)
+                        .addComponent(btnbuscarC2)
+                        .addGap(7, 7, 7)
+                        .addComponent(buscar2)
+                        .addGap(19, 19, 19))))
         );
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
@@ -508,15 +395,15 @@ public class FormularioAdmin extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 806, Short.MAX_VALUE)
+                .addComponent(jScrollPane2)
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 242, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         jMenu1.setText("Consultas");
@@ -628,19 +515,15 @@ public class FormularioAdmin extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(p11, javax.swing.GroupLayout.PREFERRED_SIZE, 826, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(p11, javax.swing.GroupLayout.DEFAULT_SIZE, 762, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(p11, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
@@ -649,19 +532,19 @@ public class FormularioAdmin extends javax.swing.JFrame {
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         p11.setVisible(true);
         namel.setVisible(true);
-        txtNombre.setVisible(true);
+        namef.setVisible(true);
         lastnamel.setVisible(true);
         lastname2l.setVisible(true);
-        txtApellido1.setVisible(true);
-        txtApellido2.setVisible(true);
+        lastnamef.setVisible(true);
+        lastname2f.setVisible(true);
         idl.setVisible(true);
-        txtCedula.setVisible(true);
+        idf.setVisible(true);
         userl.setVisible(true);
-        txtUser.setVisible(true);
+        userf.setVisible(true);
         fechainil.setVisible(true);
-        dcFechaI.setVisible(true);
+        fechainif.setVisible(true);
         fechafinl.setVisible(true);
-        dcFechaF.setVisible(true);
+        fechafinf.setVisible(true);
         btnbuscarC2.setVisible(true);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
@@ -670,8 +553,6 @@ public class FormularioAdmin extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-        InvisiblesComp();
-        modelo = new DefaultTableModel();
         lblTitulo.setText("EMPRESAS ASOCIADAS");
         lblTitulo.setVisible(true);
         pTitulo.setVisible(true);
@@ -698,69 +579,19 @@ public class FormularioAdmin extends javax.swing.JFrame {
 
     private void jMenu1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu1ActionPerformed
         // TODO add your handling code here
-        modelo = new DefaultTableModel();
     }//GEN-LAST:event_jMenu1ActionPerformed
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
-        modelo = new DefaultTableModel();
-                
         lblTitulo.setText("PUESTOS DE TRABAJO");
         lblTitulo.setVisible(true);
         pTitulo.setVisible(true);
-        p11.setVisible(true);        
-       
-        fechainil.setVisible(true);
-        fechafinl.setVisible(true);
-        edadinil.setVisible(true);
-        edadfinl.setVisible(true);       
-        dcFechaI.setVisible(true);
-        dcFechaF.setVisible(true);
-        dcEdadI.setVisible(true);
-        dcEdadF.setVisible(true);
+        p11.setVisible(true);
         
-        lblEmpresa.setVisible(true);
-        lblgAcademico.setVisible(true);
-        lblPuesto.setVisible(true);
-        cbGradoA.setVisible(true);  
-        cbPuesto.setVisible(true); 
-        cbEmpresa.setVisible(true);
         
-        btnbuscarC2.setVisible(true);
-        
-        llenarCBEmpresa(); llenarCBGradoA(); llenarCBPuesto();
         
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     private void btnbuscarC2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnbuscarC2ActionPerformed
-<<<<<<< HEAD
-        //Consulta 2 Puesto de trabajo
-        pEmpresa = cbEmpresa.getSelectedItem().toString();
-        pGAcademico = cbGradoA.getSelectedItem().toString();
-        pPuesto = cbPuesto.getSelectedItem().toString();       
-        
-        pEdad1 = dcEdadI.getDate().toString();
-        pEdad2 = dcEdadF.getDate().toString();
-        pfecha1 = dcFechaI.getDate().toString();
-        pfecha2 = dcFechaF.getDate().toString();
-               
-        try {
-            this.tabla.setModel(modelo);
-            ResultSet r;
-            r = ChaoDesempleo.dbManager.Puestos(pEmpresa, pPuesto, pEdad1, pEdad2, pGAcademico, pfecha1, pfecha2);
-            ResultSetMetaData rsMd = r.getMetaData();
-            int cntddColumnas = rsMd.getColumnCount();
-            for (int i=1; i<=cntddColumnas; i++){
-                    modelo.addColumn(rsMd.getColumnLabel(i));
-            }
-            while (r.next()){
-                Object[] fila = new Object[cntddColumnas];
-                for(int i=0; i<cntddColumnas; i++){
-                    fila[i]=r.getObject(i+1);
-                }               
-                modelo.addRow(fila);
-            }        
-        } catch  (Exception e) {e.printStackTrace();}
-=======
         //USUARIOS SIN CAMBIAR CLAVE
         t.usuariosSinCambio(tabla);
         String nombre = nombref.getSelectedItem().toString();
@@ -768,20 +599,19 @@ public class FormularioAdmin extends javax.swing.JFrame {
         String edadhasta = edadinif.getDate().toString();
         String publide = fechainif.getDate().toString();
         String publihasta = fechafinf.getDate().toString();
-        modelo = new DefaultTableModel(0,0);
+        DefaultTableModel modelo = new DefaultTableModel();
         this.tabla.setModel(modelo);
->>>>>>> e45775ef7bc9e4ae9deafe53f9ab28052599a654
         
     }//GEN-LAST:event_btnbuscarC2ActionPerformed
 
-    private void txtUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUserActionPerformed
+    private void userfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userfActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtUserActionPerformed
+    }//GEN-LAST:event_userfActionPerformed
 
     private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
-        InvisiblesComp();
         lblTitulo.setText("ESTADISTICAS: Solicitantes por edad");
         lblTitulo.setVisible(true);
+        Object[] fila = null;
         try {
             modelo = new DefaultTableModel(0,0);
             this.tabla.setModel(modelo);
@@ -793,12 +623,12 @@ public class FormularioAdmin extends javax.swing.JFrame {
                     modelo.addColumn(rsMd.getColumnLabel(i));
             }
             while (r.next()){
-                Object[] fila = new Object[cntddColumnas];
+                fila = new Object[cntddColumnas];
                 for(int i=0; i<cntddColumnas; i++){
                     fila[i]=r.getObject(i+1);
                 }               
                 modelo.addRow(fila);
-            }     
+            } 
         } catch (SQLException ex) {
             Logger.getLogger(FormularioAdmin.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -929,25 +759,21 @@ public class FormularioAdmin extends javax.swing.JFrame {
             Logger.getLogger(FormularioAdmin.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jMenuItem12ActionPerformed
-
-    private void btnBuscarC3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarC3ActionPerformed
-        
-    }//GEN-LAST:event_btnBuscarC3ActionPerformed
    
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnBuscarC3;
     private javax.swing.JButton btnbuscarC2;
-    private javax.swing.JComboBox<String> cbEmpresa;
-    private javax.swing.JComboBox<String> cbGradoA;
-    private javax.swing.JComboBox<String> cbPuesto;
-    private com.toedter.calendar.JDateChooser dcEdadF;
-    private com.toedter.calendar.JDateChooser dcEdadI;
-    private com.toedter.calendar.JDateChooser dcFechaF;
-    private com.toedter.calendar.JDateChooser dcFechaI;
+    private javax.swing.JButton buscar2;
+    private com.toedter.calendar.JDateChooser edadfinf;
     private javax.swing.JLabel edadfinl;
+    private com.toedter.calendar.JDateChooser edadinif;
     private javax.swing.JLabel edadinil;
+    private com.toedter.calendar.JDateChooser fechafinf;
     private javax.swing.JLabel fechafinl;
+    private com.toedter.calendar.JDateChooser fechainif;
     private javax.swing.JLabel fechainil;
+    private javax.swing.JComboBox<String> gradof;
+    private javax.swing.JLabel gradol;
+    private javax.swing.JTextField idf;
     private javax.swing.JLabel idl;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
@@ -969,21 +795,19 @@ public class FormularioAdmin extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;
+    private javax.swing.JTextField lastname2f;
     private javax.swing.JLabel lastname2l;
+    private javax.swing.JTextField lastnamef;
     private javax.swing.JLabel lastnamel;
-    private javax.swing.JLabel lblEmpresa;
-    private javax.swing.JLabel lblPuesto;
     private javax.swing.JLabel lblTitulo;
-    private javax.swing.JLabel lblgAcademico;
+    private javax.swing.JTextField namef;
     private javax.swing.JLabel namel;
+    private javax.swing.JComboBox<String> nombref;
+    private javax.swing.JLabel nombrel;
     private javax.swing.JPanel p11;
     private javax.swing.JPanel pTitulo;
     private javax.swing.JTable tabla;
-    private javax.swing.JTextField txtApellido1;
-    private javax.swing.JTextField txtApellido2;
-    private javax.swing.JTextField txtCedula;
-    private javax.swing.JTextField txtNombre;
-    private javax.swing.JTextField txtUser;
+    private javax.swing.JTextField userf;
     private javax.swing.JLabel userl;
     // End of variables declaration//GEN-END:variables
 }
