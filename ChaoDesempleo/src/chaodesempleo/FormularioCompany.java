@@ -16,13 +16,10 @@ public class FormularioCompany extends javax.swing.JFrame {
      */
     public FormularioCompany() {
         initComponents();
-<<<<<<< HEAD
         p33.setVisible(false);
-        paneltabla.setVisible(false);
-=======
+        //paneltabla.setVisible(false);
         p33.setVisible(false); 
         j1.setVisible(false);
->>>>>>> 183b2723e8ba171aef6fb92bedc641b41ce27897
        
     }
 
