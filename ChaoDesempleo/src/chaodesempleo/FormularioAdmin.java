@@ -598,7 +598,7 @@ public class FormularioAdmin extends javax.swing.JFrame {
         String edadhasta = edadinif.getDate().toString();
         String publide = fechainif.getDate().toString();
         String publihasta = fechafinf.getDate().toString();
-        DefaultTableModel modelo = new DefaultTableModel();
+        modelo = new DefaultTableModel(0,0);
         this.tabla.setModel(modelo);
         
     }//GEN-LAST:event_btnbuscarC2ActionPerformed
