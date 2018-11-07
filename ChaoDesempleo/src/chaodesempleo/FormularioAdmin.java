@@ -7,21 +7,11 @@ package chaodesempleo;
 
 import Utilidades.*;
 import javax.swing.table.DefaultTableModel;
-import java.awt.BorderLayout;
-import java.awt.Dimension;
-import java.sql.CallableStatement;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.JScrollPane;
-import javax.swing.JTable;
-import javax.swing.ScrollPaneConstants;
-import static chaodesempleo.databaseManager.*;
-import javax.swing.table.TableModel;
 /**
  *
  * @author Mariela
@@ -35,14 +25,7 @@ public class FormularioAdmin extends javax.swing.JFrame {
     databaseManager conectar;
     DefaultTableModel modelo = new DefaultTableModel();
     
-    public FormularioAdmin() {
-        initComponents();
-        p11.setVisible(false);
-        InvisiblesComp();
-        
-       
-    }
-     public void InvisiblesComp()
+    public void InvisiblesComp()
     {
         //LABELS
         userl.setVisible(false);
@@ -74,6 +57,13 @@ public class FormularioAdmin extends javax.swing.JFrame {
         lastname2f.setVisible(false);
         gradof.setVisible(false);  
     }
+
+    public FormularioAdmin() {
+        initComponents();
+        p11.setVisible(false);
+        InvisiblesComp();
+    }
+     
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -563,12 +553,9 @@ public class FormularioAdmin extends javax.swing.JFrame {
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
         lblTitulo.setText("EMPRESAS ASOCIADAS");
-<<<<<<< HEAD
         lblTitulo.setVisible(true);
         pTitulo.setVisible(true);
         p11.setVisible(true);
-=======
->>>>>>> 833d8743a8bfcf24ad872956d8a0838e4285f31e
         try {
             this.tabla.setModel(modelo);
             ResultSet r;

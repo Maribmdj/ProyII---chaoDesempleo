@@ -5,6 +5,14 @@
  */
 package chaodesempleo;
 
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
+
 /**
  *
  * @author Mariela
@@ -50,11 +58,6 @@ public class FormularioCompany extends javax.swing.JFrame {
         jMenuItem3 = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
         jMenuItem7 = new javax.swing.JMenuItem();
-        jMenuItem9 = new javax.swing.JMenuItem();
-        jMenuItem8 = new javax.swing.JMenuItem();
-        jMenuItem10 = new javax.swing.JMenuItem();
-        jMenuItem11 = new javax.swing.JMenuItem();
-        jMenuItem12 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Empresa");
@@ -179,23 +182,13 @@ public class FormularioCompany extends javax.swing.JFrame {
 
         jMenu3.setText("Estadísticas");
 
-        jMenuItem7.setText("Solicitantes por edad");
+        jMenuItem7.setText("Solicitantes");
+        jMenuItem7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem7ActionPerformed(evt);
+            }
+        });
         jMenu3.add(jMenuItem7);
-
-        jMenuItem9.setText("Solicitantes por Canton");
-        jMenu3.add(jMenuItem9);
-
-        jMenuItem8.setText("Solicitantes por distrito");
-        jMenu3.add(jMenuItem8);
-
-        jMenuItem10.setText("Solicitantes por provincia");
-        jMenu3.add(jMenuItem10);
-
-        jMenuItem11.setText("Top N de empresas con mayor solicitud");
-        jMenu3.add(jMenuItem11);
-
-        jMenuItem12.setText("Top N de puestos con mayor solicitud");
-        jMenu3.add(jMenuItem12);
 
         jMenuBar1.add(jMenu3);
 
@@ -227,6 +220,30 @@ public class FormularioCompany extends javax.swing.JFrame {
            j1.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
+        j1.setVisible(true);
+        DefaultTableModel modelo = new DefaultTableModel(0,0);
+        try {
+            this.jTable1.setModel(modelo);
+            ResultSet r;
+            r = ChaoDesempleo.dbManager.solicitantexempresa(ChaoDesempleo.currentUser);
+            ResultSetMetaData rsMd = r.getMetaData();
+            int cntddColumnas = rsMd.getColumnCount();
+            for (int i=1; i<=cntddColumnas; i++){
+                    modelo.addColumn(rsMd.getColumnLabel(i));
+            }
+            while (r.next()){
+                Object[] fila = new Object[cntddColumnas];
+                for(int i=0; i<cntddColumnas; i++){
+                    fila[i]=r.getObject(i+1);
+                }               
+                modelo.addRow(fila);
+            }        
+        } catch (SQLException ex) {
+            Logger.getLogger(FormularioAdmin.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jMenuItem7ActionPerformed
+
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private com.toedter.calendar.JDateChooser fechafinf2;
@@ -238,13 +255,8 @@ public class FormularioCompany extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem10;
-    private javax.swing.JMenuItem jMenuItem11;
-    private javax.swing.JMenuItem jMenuItem12;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem7;
-    private javax.swing.JMenuItem jMenuItem8;
-    private javax.swing.JMenuItem jMenuItem9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JLabel namel;

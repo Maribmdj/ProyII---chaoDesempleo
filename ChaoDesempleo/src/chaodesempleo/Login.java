@@ -218,7 +218,7 @@ public class Login extends javax.swing.JFrame {
                 int b = ChaoDesempleo.dbManager.getTypeByUser(s);
                 this.setVisible(false);
                 if (b!=-1){
-                switch (1) {
+                switch (b) {
                     case 1:
                         {
                             FormularioAdmin fmla = new FormularioAdmin();

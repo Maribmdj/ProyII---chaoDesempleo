@@ -11,14 +11,7 @@ import java.sql.Statement;
 public class databaseManager {
     private Connection conexion = null;
     private static databaseManager manager;
-<<<<<<< HEAD
-    String sql = null;
-    String url = null;
-    static ResultSet rs;
-
-=======
     
->>>>>>> 833d8743a8bfcf24ad872956d8a0838e4285f31e
     public static databaseManager getManager(String url, String username, String pw){
         if(manager == null)
         {
@@ -70,16 +63,15 @@ public class databaseManager {
     }
     
     public ResultSet empresa_QPuestos() throws SQLException{
-<<<<<<< HEAD
-        sql = "{call empresa_qpuestos()}";
+        String sql = "{call empresa_qpuestos()}";
         Statement s = conexion.createStatement();
-        rs = s.executeQuery(sql);
+        ResultSet rs = s.executeQuery(sql);
         return rs;             
     }
     
     public ResultSet Puestos(String pEmpresa, String pPuesto, String pEdad1, String pEdad2, String pGradoA, String pPublicado1, String pPublicado2) throws SQLException
     {
-        sql = "{call puestos(?,?,?,?,?,?,?)}";
+        String sql = "{call puestos(?,?,?,?,?,?,?)}";
         //Statement s = conexion.createStatement();
         
         CallableStatement cs = conexion.prepareCall(sql);     
@@ -91,14 +83,8 @@ public class databaseManager {
         cs.setString(6, pPublicado1);
         cs.setString(7, pPublicado2);
         
-        rs = cs.executeQuery(sql);
-        return rs;  
-=======
-        String sql = "{call empresa_qpuestos()}";
-        Statement cs = conexion.createStatement();
         ResultSet rs = cs.executeQuery(sql);
-        return rs;
->>>>>>> 833d8743a8bfcf24ad872956d8a0838e4285f31e
+        return rs;  
     }
     
     public ResultSet empresaxjobs(int i) throws SQLException{
@@ -142,6 +128,12 @@ public class databaseManager {
         ResultSet rs = cs.executeQuery(sql);
         return rs;
     }
-
+    
+    public ResultSet solicitantexempresa(int i) throws SQLException{
+        String sql = "{call solicitantexempresa(" + i + ")}";
+        Statement cs = conexion.createStatement();
+        ResultSet rs = cs.executeQuery(sql);
+        return rs;
+    }
     
 }
