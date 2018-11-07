@@ -136,4 +136,11 @@ public class databaseManager {
         return rs;
     }
     
+    public ResultSet edadesxempresa(int i) throws SQLException{
+        String sql = "{call edadesxempresa(" + i + ")}";
+        Statement cs = conexion.createStatement();
+        ResultSet rs = cs.executeQuery(sql);
+        return rs;
+    }
+    
 }
