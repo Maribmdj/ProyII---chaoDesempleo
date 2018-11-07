@@ -19,10 +19,14 @@ public class ChaoDesempleo {
 
     
     public static void main(String[] args) {
+<<<<<<< HEAD
         //Alvaro
         //dbManager = databaseManager.getManager("jdbc:mysql://localhost:3306/chaodesempleo?verifyServerCertificate=false&useSSL=true", "root", "mysql");
         //Mariela
         dbManager = databaseManager.getManager("jdbc:mysql://localhost:3306/chaodesempleo?verifyServerCertificate=false&useSSL=true", "root", "Mysql");
+=======
+         dbManager = databaseManager.getManager("jdbc:mysql://localhost:3306/chaodesempleo?verifyServerCertificate=false&useSSL=true", "root", "mysql");
+>>>>>>> e45775ef7bc9e4ae9deafe53f9ab28052599a654
 
         if(dbManager.getConexion()!= null){
             System.out.println("Database connected");

@@ -3,6 +3,7 @@ package chaodesempleo;
 
 import Utilidades.Encriptar;
 import java.sql.Connection;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -216,8 +217,10 @@ public class Login extends javax.swing.JFrame {
             int s = ChaoDesempleo.dbManager.validateUser(txtUser.getText(), txtClave.getPassword());
             if(s != -1){
                 ChaoDesempleo.currentUser = s;
+                int b = ChaoDesempleo.dbManager.getTypeByUser(s);
                 this.setVisible(false);
-                switch (1) {
+                if (b!=-1){
+                switch (b) {
                     case 1:
                         {
                             FormularioAdmin fmla = new FormularioAdmin();
@@ -236,6 +239,7 @@ public class Login extends javax.swing.JFrame {
                             fmla.setVisible(true);
                             break;
                         }
+                            }
                 }
             }else{
                 JOptionPane.showMessageDialog(rootPane, "Usuario no encontrado");

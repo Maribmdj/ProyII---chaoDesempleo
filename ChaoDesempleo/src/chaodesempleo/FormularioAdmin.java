@@ -7,21 +7,11 @@ package chaodesempleo;
 
 import Utilidades.*;
 import javax.swing.table.DefaultTableModel;
-import java.awt.BorderLayout;
-import java.awt.Dimension;
-import java.sql.CallableStatement;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.JScrollPane;
-import javax.swing.JTable;
-import javax.swing.ScrollPaneConstants;
-import static chaodesempleo.databaseManager.*;
-import javax.swing.table.TableModel;
 /**
  *
  * @author Mariela
@@ -34,6 +24,7 @@ public class FormularioAdmin extends javax.swing.JFrame {
     Tabla t = new Tabla();
     databaseManager conectar;
     DefaultTableModel modelo = new DefaultTableModel();
+<<<<<<< HEAD
         public String pnombre = "";
         public String papellido1 = "";
         public String papellido2 = "";
@@ -58,6 +49,10 @@ public class FormularioAdmin extends javax.swing.JFrame {
        
     }
      public void InvisiblesComp()
+=======
+    
+    public void InvisiblesComp()
+>>>>>>> e45775ef7bc9e4ae9deafe53f9ab28052599a654
     {
         //LABELS
         userl.setVisible(false);
@@ -127,6 +122,7 @@ public class FormularioAdmin extends javax.swing.JFrame {
         }catch (Exception e) {e.printStackTrace();}
     }
 
+<<<<<<< HEAD
      public void LimpiarcbPuesto(){
         int ItemCount  = cbPuesto.getItemCount();
         for(int i=0; i<ItemCount; i++){
@@ -145,6 +141,15 @@ public class FormularioAdmin extends javax.swing.JFrame {
         }catch (Exception e) {e.printStackTrace();}
     }
      
+=======
+    public FormularioAdmin() {
+        initComponents();
+        p11.setVisible(false);
+        InvisiblesComp();
+    }
+     
+
+>>>>>>> e45775ef7bc9e4ae9deafe53f9ab28052599a654
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -727,6 +732,7 @@ public class FormularioAdmin extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     private void btnbuscarC2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnbuscarC2ActionPerformed
+<<<<<<< HEAD
         //Consulta 2 Puesto de trabajo
         pEmpresa = cbEmpresa.getSelectedItem().toString();
         pGAcademico = cbGradoA.getSelectedItem().toString();
@@ -754,6 +760,17 @@ public class FormularioAdmin extends javax.swing.JFrame {
                 modelo.addRow(fila);
             }        
         } catch  (Exception e) {e.printStackTrace();}
+=======
+        //USUARIOS SIN CAMBIAR CLAVE
+        t.usuariosSinCambio(tabla);
+        String nombre = nombref.getSelectedItem().toString();
+        String edadde = edadfinf.getDate().toString();
+        String edadhasta = edadinif.getDate().toString();
+        String publide = fechainif.getDate().toString();
+        String publihasta = fechafinf.getDate().toString();
+        modelo = new DefaultTableModel(0,0);
+        this.tabla.setModel(modelo);
+>>>>>>> e45775ef7bc9e4ae9deafe53f9ab28052599a654
         
     }//GEN-LAST:event_btnbuscarC2ActionPerformed
 
