@@ -1,3 +1,5 @@
+alter table jobxperson auto_increment = 1;
+
 CALL insert_jobxperson('PDF ',4,1);
 CALL insert_jobxperson('PDF ',5,1);
 CALL insert_jobxperson('PDF ',6,1);
@@ -32,3 +34,17 @@ CALL insert_jobxperson('PDF ',6,10);
 CALL insert_jobxperson('PDF ',7,10);
 CALL insert_jobxperson('PDF ',10,10);
 CALL insert_jobxperson('PDF ',11,10);
+
+CALL insert_jobxperson('',14,1);
+CALL insert_jobxperson('',14,2);
+CALL insert_jobxperson('',15,3);
+CALL insert_jobxperson('',16,4);
+CALL insert_jobxperson('',17,5);
+CALL insert_jobxperson('',17,6);
+CALL insert_jobxperson('',17,7);
+CALL insert_jobxperson('',17,8);
+CALL insert_jobxperson('',15,9);
+CALL insert_jobxperson('',17,10);
+CALL insert_jobxperson('',17,10);
+CALL insert_jobxperson('',17,10);
+

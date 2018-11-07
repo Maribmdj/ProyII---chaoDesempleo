@@ -5,16 +5,13 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 //Esta clase se encarga de toda la conexion con MySQL
 public class databaseManager {
     private Connection conexion = null;
     private static databaseManager manager;
-    CallableStatement cs = null;
-    String sql = null;
-    String url = null;
-    static ResultSet rs;
-
+    
     public static databaseManager getManager(String url, String username, String pw){
         if(manager == null)
         {
@@ -56,25 +53,53 @@ public class databaseManager {
     }
     
     public ResultSet empresa_QPuestos() throws SQLException{
-        //int result;
-        System.out.println("Entra sp 1");
-        sql = "{call empresa_qpuestos(?)}";
-        try {
-            System.out.println("Entra sp 2");
-            cs = conexion.prepareCall(sql);
-            cs.registerOutParameter(1, java.sql.Types.REF_CURSOR);
-            System.out.println("Entra sp 3");
-            cs.execute();            
-            System.out.println("Entra sp 4");
-            rs = (ResultSet) cs.getObject(1);            
-            //result = cs.getInt(1);
-            return rs;
-            
-        }catch (Exception e)
-            { e.printStackTrace(); } 
+        String sql = "{call empresa_qpuestos()}";
+        Statement cs = conexion.createStatement();
+        ResultSet rs = cs.executeQuery(sql);
         return rs;
-        
     }
     
+    public ResultSet empresaxjobs(int i) throws SQLException{
+        String sql = "{call empresaxjobs(" + i + ")}";
+        Statement cs = conexion.createStatement();
+        ResultSet rs = cs.executeQuery(sql);
+        return rs;
+    }    
+    
+    public ResultSet SolicitantesxProvincia() throws SQLException{
+        String sql = "{call SolicitantesxProvincia()}";
+        Statement cs = conexion.createStatement();
+        ResultSet rs = cs.executeQuery(sql);
+        return rs;
+    }    
+
+    public ResultSet SolicitantesxEdad() throws SQLException{
+        String sql = "{call SolicitantesxEdad()}";
+        Statement cs = conexion.createStatement();
+        ResultSet rs = cs.executeQuery(sql);
+        return rs;
+    }
+
+    public ResultSet SolicitantesxDistrito() throws SQLException{
+        String sql = "{call SolicitantesxDistrito()}";
+        Statement cs = conexion.createStatement();
+        ResultSet rs = cs.executeQuery(sql);
+        return rs;
+    }    
+
+    public ResultSet SolicitantesxCanton() throws SQLException{
+        String sql = "{call SolicitantesxCanton()}";
+        Statement cs = conexion.createStatement();
+        ResultSet rs = cs.executeQuery(sql);
+        return rs;
+    }
+
+    public ResultSet jobxsolicitantes(int i) throws SQLException{
+        String sql = "{call jobxsolicitantes(" + i + ")}";
+        Statement cs = conexion.createStatement();
+        ResultSet rs = cs.executeQuery(sql);
+        return rs;
+    }
+
     
 }

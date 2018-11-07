@@ -215,7 +215,7 @@ public class Login extends javax.swing.JFrame {
             if(s != -1){
                 ChaoDesempleo.currentUser = s;
                 this.setVisible(false);
-                switch (s) {
+                switch (1) {
                     case 1:
                         {
                             FormularioAdmin fmla = new FormularioAdmin();

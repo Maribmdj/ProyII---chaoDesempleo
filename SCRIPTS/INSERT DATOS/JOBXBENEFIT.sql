@@ -1,3 +1,5 @@
+alter table jobxbenf auto_increment = 1;
+
 call insert_jobxbenf(1,1);
 call insert_jobxbenf(1,2);
 call insert_jobxbenf(1,3);
