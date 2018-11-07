@@ -21,6 +21,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.ScrollPaneConstants;
 import static chaodesempleo.databaseManager.*;
+import javax.swing.table.TableModel;
 /**
  *
  * @author Mariela
@@ -146,6 +147,7 @@ public class FormularioAdmin extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTable1);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Sistema Administrador");
         setPreferredSize(new java.awt.Dimension(650, 600));
 
         p11.setBackground(new java.awt.Color(255, 255, 255));
@@ -467,21 +469,51 @@ public class FormularioAdmin extends javax.swing.JFrame {
         jMenu3.setText("Estadísticas");
 
         jMenuItem7.setText("Solicitantes por edad");
+        jMenuItem7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem7ActionPerformed(evt);
+            }
+        });
         jMenu3.add(jMenuItem7);
 
         jMenuItem9.setText("Solicitantes por Canton");
+        jMenuItem9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem9ActionPerformed(evt);
+            }
+        });
         jMenu3.add(jMenuItem9);
 
         jMenuItem8.setText("Solicitantes por distrito");
+        jMenuItem8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem8ActionPerformed(evt);
+            }
+        });
         jMenu3.add(jMenuItem8);
 
         jMenuItem10.setText("Solicitantes por provincia");
+        jMenuItem10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem10ActionPerformed(evt);
+            }
+        });
         jMenu3.add(jMenuItem10);
 
         jMenuItem11.setText("Top N de empresas con mayor solicitud");
+        jMenuItem11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem11ActionPerformed(evt);
+            }
+        });
         jMenu3.add(jMenuItem11);
 
         jMenuItem12.setText("Top N de puestos con mayor solicitud");
+        jMenuItem12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem12ActionPerformed(evt);
+            }
+        });
         jMenu3.add(jMenuItem12);
 
         jMenuBar1.add(jMenu3);
@@ -531,23 +563,25 @@ public class FormularioAdmin extends javax.swing.JFrame {
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
         lblTitulo.setText("EMPRESAS ASOCIADAS");
+<<<<<<< HEAD
         lblTitulo.setVisible(true);
         pTitulo.setVisible(true);
         p11.setVisible(true);
+=======
+>>>>>>> 833d8743a8bfcf24ad872956d8a0838e4285f31e
         try {
             this.tabla.setModel(modelo);
             ResultSet r;
             r = ChaoDesempleo.dbManager.empresa_QPuestos();
             ResultSetMetaData rsMd = r.getMetaData();
             int cntddColumnas = rsMd.getColumnCount();
-            
             for (int i=1; i<=cntddColumnas; i++){
                     modelo.addColumn(rsMd.getColumnLabel(i));
             }
-            while (rs.next()){
+            while (r.next()){
                 Object[] fila = new Object[cntddColumnas];
                 for(int i=0; i<cntddColumnas; i++){
-                    fila[i]=rs.getObject(i+1);
+                    fila[i]=r.getObject(i+1);
                 }               
                 modelo.addRow(fila);
             }        
@@ -585,6 +619,156 @@ public class FormularioAdmin extends javax.swing.JFrame {
     private void userfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userfActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_userfActionPerformed
+
+    private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
+        lblTitulo.setText("ESTADISTICAS: Solicitantes por edad");
+        lblTitulo.setVisible(true);
+        try {
+            modelo = new DefaultTableModel(0,0);
+            this.tabla.setModel(modelo);
+            ResultSet r;
+            r = ChaoDesempleo.dbManager.SolicitantesxEdad();
+            ResultSetMetaData rsMd = r.getMetaData();
+            int cntddColumnas = rsMd.getColumnCount();
+            for (int i=1; i<=cntddColumnas; i++){
+                    modelo.addColumn(rsMd.getColumnLabel(i));
+            }
+            while (r.next()){
+                Object[] fila = new Object[cntddColumnas];
+                for(int i=0; i<cntddColumnas; i++){
+                    fila[i]=r.getObject(i+1);
+                }               
+                modelo.addRow(fila);
+            }        
+        } catch (SQLException ex) {
+            Logger.getLogger(FormularioAdmin.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jMenuItem7ActionPerformed
+
+    private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
+        lblTitulo.setText("ESTADISTICAS: Solicitantes por distrito");
+        lblTitulo.setVisible(true);
+        try {
+            modelo = new DefaultTableModel(0,0);
+            this.tabla.setModel(modelo);
+            ResultSet r;
+            r = ChaoDesempleo.dbManager.SolicitantesxDistrito();
+            ResultSetMetaData rsMd = r.getMetaData();
+            int cntddColumnas = rsMd.getColumnCount();
+            for (int i=1; i<=cntddColumnas; i++){
+                    modelo.addColumn(rsMd.getColumnLabel(i));
+            }
+            while (r.next()){
+                Object[] fila = new Object[cntddColumnas];
+                for(int i=0; i<cntddColumnas; i++){
+                    fila[i]=r.getObject(i+1);
+                }               
+                modelo.addRow(fila);
+            }        
+        } catch (SQLException ex) {
+            Logger.getLogger(FormularioAdmin.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jMenuItem9ActionPerformed
+
+    private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
+        lblTitulo.setText("ESTADISTICAS: Solicitantes por canton");
+        lblTitulo.setVisible(true);
+        try {
+            modelo = new DefaultTableModel(0,0);
+            this.tabla.setModel(modelo);
+            ResultSet r;
+            r = ChaoDesempleo.dbManager.SolicitantesxCanton();
+            ResultSetMetaData rsMd = r.getMetaData();
+            int cntddColumnas = rsMd.getColumnCount();
+            for (int i=1; i<=cntddColumnas; i++){
+                    modelo.addColumn(rsMd.getColumnLabel(i));
+            }
+            while (r.next()){
+                Object[] fila = new Object[cntddColumnas];
+                for(int i=0; i<cntddColumnas; i++){
+                    fila[i]=r.getObject(i+1);
+                }               
+                modelo.addRow(fila);
+            }        
+        } catch (SQLException ex) {
+            Logger.getLogger(FormularioAdmin.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jMenuItem8ActionPerformed
+
+    private void jMenuItem10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem10ActionPerformed
+        lblTitulo.setText("ESTADISTICAS: Solicitantes por provincia");
+        lblTitulo.setVisible(true);
+        try {
+            modelo = new DefaultTableModel(0,0);
+            this.tabla.setModel(modelo);
+            ResultSet r;
+            r = ChaoDesempleo.dbManager.SolicitantesxProvincia();
+            ResultSetMetaData rsMd = r.getMetaData();
+            int cntddColumnas = rsMd.getColumnCount();
+            for (int i=1; i<=cntddColumnas; i++){
+                    modelo.addColumn(rsMd.getColumnLabel(i));
+            }
+            while (r.next()){
+                Object[] fila = new Object[cntddColumnas];
+                for(int i=0; i<cntddColumnas; i++){
+                    fila[i]=r.getObject(i+1);
+                }               
+                modelo.addRow(fila);
+            }        
+        } catch (SQLException ex) {
+            Logger.getLogger(FormularioAdmin.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jMenuItem10ActionPerformed
+
+    private void jMenuItem11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem11ActionPerformed
+        lblTitulo.setText("ESTADISTICAS: Top N de empresas con mayor solicitud");
+        lblTitulo.setVisible(true);
+        try {
+            modelo = new DefaultTableModel(0,0);
+            this.tabla.setModel(modelo);
+            ResultSet r;
+            r = ChaoDesempleo.dbManager.empresaxjobs(3);
+            ResultSetMetaData rsMd = r.getMetaData();
+            int cntddColumnas = rsMd.getColumnCount();
+            for (int i=1; i<=cntddColumnas; i++){
+                    modelo.addColumn(rsMd.getColumnLabel(i));
+            }
+            while (r.next()){
+                Object[] fila = new Object[cntddColumnas];
+                for(int i=0; i<cntddColumnas; i++){
+                    fila[i]=r.getObject(i+1);
+                }               
+                modelo.addRow(fila);
+            }        
+        } catch (SQLException ex) {
+            Logger.getLogger(FormularioAdmin.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jMenuItem11ActionPerformed
+
+    private void jMenuItem12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem12ActionPerformed
+        lblTitulo.setText("ESTADISTICAS: Top N de puestos con mayor solicitud");
+        lblTitulo.setVisible(true);
+        try {
+            modelo = new DefaultTableModel(0,0);
+            this.tabla.setModel(modelo);
+            ResultSet r;
+            r = ChaoDesempleo.dbManager.jobxsolicitantes(3);
+            ResultSetMetaData rsMd = r.getMetaData();
+            int cntddColumnas = rsMd.getColumnCount();
+            for (int i=1; i<=cntddColumnas; i++){
+                    modelo.addColumn(rsMd.getColumnLabel(i));
+            }
+            while (r.next()){
+                Object[] fila = new Object[cntddColumnas];
+                for(int i=0; i<cntddColumnas; i++){
+                    fila[i]=r.getObject(i+1);
+                }               
+                modelo.addRow(fila);
+            }        
+        } catch (SQLException ex) {
+            Logger.getLogger(FormularioAdmin.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jMenuItem12ActionPerformed
    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnbuscarC2;

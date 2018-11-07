@@ -57,6 +57,7 @@ public class FormularioCompany extends javax.swing.JFrame {
         jMenuItem12 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Empresa");
 
         p33.setBackground(new java.awt.Color(255, 255, 255));
 
