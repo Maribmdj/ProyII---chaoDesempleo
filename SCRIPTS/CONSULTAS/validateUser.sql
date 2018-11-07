@@ -7,21 +7,9 @@ RETURNS INT
 READS SQL DATA
 DETERMINISTIC
 BEGIN
-	DECLARE i INT;
-<<<<<<< HEAD
-    select p.id_typeperson from user
-    u inner join person p
-    on u.id_person=p.id_person and u.user=username 
-    and u.password=ppassword into i;
+	DECLARE i INT default 0;
+    select id_user from user where user = username and password = ppassword INTO i;
 	if ((select i)!= 0)
-=======
-    
-	select p.id_typeperson 
-	from user u inner join person p
-	on u.id_person=p.id_person and u.user = username and u.password = ppassword INTO i;
-	
-    if ((select i)!= 0)
->>>>>>> 86a8aea19f0848091ee8f36f38c1da1f4d61cf96
 	then
 		return (select i);
 	else
