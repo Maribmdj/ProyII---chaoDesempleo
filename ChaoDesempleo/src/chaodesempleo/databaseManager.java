@@ -52,6 +52,16 @@ public class databaseManager {
         return result;
     }
     
+    public int getTypeByUser(int id) throws SQLException{
+        String sql = "{call gettypebyuser("+id+")}";
+        Statement cs = conexion.createStatement();
+        ResultSet res = cs.executeQuery(sql);
+        if (res.next()){
+            return res.getInt(1);
+        }
+        return -1;
+    }
+    
     public ResultSet empresa_QPuestos() throws SQLException{
         String sql = "{call empresa_qpuestos()}";
         Statement cs = conexion.createStatement();
