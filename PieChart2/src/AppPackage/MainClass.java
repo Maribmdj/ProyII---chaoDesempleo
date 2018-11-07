@@ -13,7 +13,7 @@ import javax.swing.JFrame;
  */
 public class MainClass {
     public static void main(String[] args) {
-        CreateChart CC = new CreateChart("Edades", "Usuarios por Edades", 1);
+        CreateChart CC = new CreateChart("Edades", "Aplicantes por Edades", 1);
         CC.pack();
         CC.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         CC.setVisible(true);

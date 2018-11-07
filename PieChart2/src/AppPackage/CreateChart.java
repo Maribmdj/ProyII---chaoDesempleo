@@ -26,14 +26,14 @@ public class CreateChart extends JFrame{
         DefaultPieDataset result = new DefaultPieDataset();
         
         switch(modo) {
-            case 1: result.setValue("0-18",5); // Edades
+            case 1: result.setValue("0-18",0); // Edades
                     result.setValue("19-30",5);
-                    result.setValue("31-45",5);
+                    result.setValue("31-45",6);
                     result.setValue("46-55",5);
-                    result.setValue("56-65",5);
-                    result.setValue("66-75",5);
-                    result.setValue("76-85",5);
-                    result.setValue("85+",5);
+                    result.setValue("56-65",1);
+                    result.setValue("66-75",1);
+                    result.setValue("76-85",0);
+                    result.setValue("85+",0);
             break;
             
             case 2: result.setValue("Niños",5);
