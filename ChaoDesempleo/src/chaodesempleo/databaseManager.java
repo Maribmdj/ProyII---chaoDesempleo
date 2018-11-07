@@ -11,14 +11,9 @@ import java.sql.Statement;
 public class databaseManager {
     private Connection conexion = null;
     private static databaseManager manager;
-<<<<<<< HEAD
     String sql = null;
     String url = null;
     static ResultSet rs;
-
-=======
-    
->>>>>>> f4d096f7b387073cc4c4dccbd7b9e7fded4b79dc
     public static databaseManager getManager(String url, String username, String pw){
         if(manager == null)
         {
@@ -70,11 +65,8 @@ public class databaseManager {
     }
     
     public ResultSet empresa_QPuestos() throws SQLException{
-<<<<<<< HEAD
         sql = "{call empresa_qpuestos()}";
-=======
         String sql = "{call empresa_qpuestos()}";
->>>>>>> f4d096f7b387073cc4c4dccbd7b9e7fded4b79dc
         Statement s = conexion.createStatement();
         ResultSet rs = s.executeQuery(sql);
         return rs;             
@@ -83,7 +75,7 @@ public class databaseManager {
     public ResultSet Puestos(String pEmpresa, String pPuesto, String pEdad1, String pEdad2, String pGradoA, String pPublicado1, String pPublicado2) throws SQLException
     {
         String sql = "{call puestos(?,?,?,?,?,?,?)}";
-        //Statement s = conexion.createStatement();
+        Statement s = conexion.createStatement();
         
         CallableStatement cs = conexion.prepareCall(sql);     
         cs.setString(1, pEmpresa);
@@ -93,18 +85,8 @@ public class databaseManager {
         cs.setString(5, pGradoA);
         cs.setString(6, pPublicado1);
         cs.setString(7, pPublicado2);
-        
-<<<<<<< HEAD
-        rs = cs.executeQuery(sql);
+        rs = cs.executeQuery(sql); 
         return rs;  
-        sql = "{call empresa_qpuestos()}";
-        Statement cs = conexion.createStatement();
-        ResultSet rs = cs.executeQuery(sql);
-        return rs;
-=======
-        ResultSet rs = cs.executeQuery(sql);
-        return rs;  
->>>>>>> f4d096f7b387073cc4c4dccbd7b9e7fded4b79dc
     }
     
     public ResultSet empresaxjobs(int i) throws SQLException{
