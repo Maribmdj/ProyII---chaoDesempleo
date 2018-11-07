@@ -5,12 +5,12 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 //Esta clase se encarga de toda la conexion con MySQL
 public class databaseManager {
     private Connection conexion = null;
     private static databaseManager manager;
-    CallableStatement cs = null;
     String sql = null;
     String url = null;
     static ResultSet rs;
@@ -56,24 +56,28 @@ public class databaseManager {
     }
     
     public ResultSet empresa_QPuestos() throws SQLException{
-        //int result;
-        System.out.println("Entra sp 1");
-        sql = "{call empresa_qpuestos(?)}";
-        try {
-            System.out.println("Entra sp 2");
-            cs = conexion.prepareCall(sql);
-            cs.registerOutParameter(1, java.sql.Types.REF_CURSOR);
-            System.out.println("Entra sp 3");
-            cs.execute();            
-            System.out.println("Entra sp 4");
-            rs = (ResultSet) cs.getObject(1);            
-            //result = cs.getInt(1);
-            return rs;
-            
-        }catch (Exception e)
-            { e.printStackTrace(); } 
-        return rs;
+        sql = "{call empresa_qpuestos()}";
+        Statement s = conexion.createStatement();
+        rs = s.executeQuery(sql);
+        return rs;             
+    }
+    
+    public ResultSet Puestos(String pEmpresa, String pPuesto, String pEdad1, String pEdad2, String pGradoA, String pPublicado1, String pPublicado2) throws SQLException
+    {
+        sql = "{call puestos(?,?,?,?,?,?,?)}";
+        //Statement s = conexion.createStatement();
         
+        CallableStatement cs = conexion.prepareCall(sql);     
+        cs.setString(1, pEmpresa);
+        cs.setString(2, pPuesto);
+        cs.setString(3, pEdad1);
+        cs.setString(4, pEdad2);
+        cs.setString(5, pGradoA);
+        cs.setString(6, pPublicado1);
+        cs.setString(7, pPublicado2);
+        
+        rs = cs.executeQuery(sql);
+        return rs;  
     }
     
     
